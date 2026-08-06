@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plano Capital — Finanzas para Mexicanos</title>
+<meta name="description" content="Un ecosistema de expertos que explora tus finanzas, detecta oportunidades y construye la estrategia de tu patrimonio. Para personas y para PyMEs.">
+<meta name="theme-color" content="#1B2631">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="src/img/icons/PC-Fav.png" type="image/x-icon">
+<link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+<a class="flot on" id="flot" href="https://wa.me/525514660228?text=Hola%2C%20quiero%20una%20asesor%C3%ADa%20con%20Plano%20Capital." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.7 15l-1.3 4.7 4.9-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.2 1.2-1.7 1.2-.5 0-2.1-.2-4.4-2.2-2.3-2-2.9-3.6-3-4.1-.1-.5.4-1.5 1-1.7.2-.1.5 0 .7.3l.9 1.5c.1.2.1.4 0 .6l-.4.6c-.1.2-.1.4 0 .5.5.8 1.4 1.7 2.3 2.2.2.1.4.1.5-.1l.5-.6c.2-.2.4-.2.6-.1l1.6.8c.3.2.5.4.4.7z"></path></svg></a>
+
+<header id="hd" class="fija"><div class="bar">
+  <a href="#inicio" class="wordmark" aria-label="Plano Capital"><span></span><b>Plano Capital</b></a>
+  <nav class="nv" id="nv">
+    <a href="#costo">El costo de esperar</a>
+    <a href="#arco">Cómo construimos</a>
+    <a href="#soluciones">Soluciones</a>
+    <a href="#escuela">Escuela</a>
+    <a href="#analisis">Análisis</a>
+  </nav>
+  <button class="mtg" id="mtg" aria-label="Menú" aria-expanded="false"><span></span><span></span><span></span></button>
+  <a class="btn sm" href="#diagnostico">Diagnóstico gratis</a>
+</div></header>
+
+<main id="inicio">
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <canvas id="arcoHero" aria-hidden="true" width="596" height="632"></canvas>
+  <div class="wrap">
+    <p class="ojo vis" data-rv="">Agencia de servicios financieros</p>
+    <h1 data-rv="" dl="1" class="vis">Finanzas para <em>Mexicanos.</em></h1>
+    <p class="lede vis" data-rv="" dl="2">Un arco no se sostiene solo: cada piedra empuja contra la siguiente. Tu patrimonio funciona igual. Somos el ecosistema de expertos que coloca cada pieza en su lugar —y la clave que las traba.</p>
+    <div class="cta vis" data-rv="" dl="3">
+      <a class="btn oro" href="#diagnostico">Haz tu diagnóstico</a>
+      <a class="btn linea" href="#costo">Cuánto cuesta esperar</a>
+    </div>
+    <div class="sello vis" data-rv="" dl="3">
+      <div><b>Personas</b><span>y personas de alto potencial</span></div>
+      <div><b>PyMEs</b><span>protección y continuidad</span></div>
+      <div><b>Polanco</b><span>Ciudad de México</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EL PROBLEMA ═══ -->
+<section class="pad crema">
+  <div class="wrap">
+    <p class="ojo vis" data-rv="">El problema que atendemos</p>
+    <h2 data-rv="" dl="1" style="margin:.26em 0 0;max-width:18ch" class="vis">Nadie nos enseñó a manejar el dinero. <em>Y se nota.</em></h2>
+    <p class="lede vis" data-rv="" dl="2" style="margin-top:20px;max-width:56ch">El problema principal que atiende Plano Capital no es la falta de dinero: es la falta de guía. La mayoría de las decisiones financieras en México se toman sin información, sin comparar y sin un plan que las conecte.</p>
+    <p class="lede vis" data-rv="" dl="2" style="margin-top:14px;max-width:56ch">Por eso este sitio empieza por enseñarte, no por venderte. Abajo hay una calculadora, un diagnóstico y una escuela. Todo abierto, todo gratis, antes de que hables con nosotros.</p>
+  </div>
+</section>
+
+<!-- ═══ EL COSTO DE NO INVERTIR ═══ -->
+<section class="pad" id="costo">
+  <div class="wrap">
+    <p class="ojo vis" data-rv="">La cuenta que nadie hace</p>
+    <h2 data-rv="" dl="1" style="margin:.26em 0 0;max-width:14ch" class="vis">El costo de <em>no invertir.</em></h2>
+    <p class="lede vis" data-rv="" dl="2" style="margin-top:18px">Guardar no es lo mismo que hacer crecer. Mueve los números con tu realidad y mira la diferencia que hace el tiempo.</p>
+    <div class="calc">
+      <div class="mandos vis" data-rv="" dl="1">
+        <label>
+          <span class="fl"><span>Ahorras cada mes</span><b id="vAporte">$10,000</b></span>
+          <input type="range" id="aporte" min="1000" max="60000" step="500" value="10000">
+        </label>
+        <label>
+          <span class="fl"><span>Durante</span><b id="vAnios">20 años</b></span>
+          <input type="range" id="anios" min="5" max="40" step="1" value="20">
+        </label>
+        <label>
+          <span class="fl"><span>Rendimiento anual estimado</span><b id="vTasa">8.2%</b></span>
+          <input type="range" id="tasa" min="4" max="16" step="0.1" value="8.2">
+        </label>
+        <div class="brecha" id="brecha">La diferencia son <b>$3,638,772</b>. No los pierdes de golpe: los dejas de ganar, un mes a la vez.</div>
+        <p class="min">Cálculo de interés compuesto con aportaciones mensuales. Es una proyección con fines educativos: los rendimientos no están garantizados y dependen del instrumento y del plazo.</p>
+      </div>
+      <div class="grafo vis" data-rv="" dl="2">
+        <canvas id="lienzo" aria-hidden="true" width="518" height="440"></canvas>
+        <div class="res">
+          <div><small>Guardado sin invertir</small><b id="rBanco">$2,400,000</b></div>
+          <div><small>Invertido con estrategia</small><b class="oroT" id="rPlano">$6,038,772</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ EL ARCO SE CONSTRUYE — ahora en carrusel horizontal ═══ -->
+<section class="pad constr noche" id="arco">
+  <div class="wrap">
+    <p class="ojo" data-rv="">Cómo construimos</p>
+    <h2 data-rv="" dl="1" style="margin:.2em 0 12px;max-width:16ch">Un arco no se sostiene solo.</h2>
+    <p class="lede intro" data-rv="" dl="1">Desliza para ver, piedra por piedra, cómo se arma la estrategia completa.</p>
+
+    <div class="carrusel">
+      <div class="cArco" data-rv="" dl="2"><canvas id="arcoC" aria-hidden="true" width="598" height="566"></canvas></div>
+
+      <div class="cTxt" data-rv="" dl="2">
+        <button class="flecha" id="arcoPrev" aria-label="Piedra anterior">‹</button>
+
+        <div class="pista" id="pista" tabindex="0" role="group" aria-roledescription="carrusel" aria-label="Cómo construimos, seis pasos">
+          <div class="rieles" id="rieles">
+            <div class="paso" data-i="0" role="group" aria-roledescription="diapositiva" aria-label="1 de 6">
+              <span class="idx">PIEDRA 01</span><h3>Diagnóstico</h3>
+              <p>Primero exploramos tus finanzas completas. No se puede construir sobre un terreno que no se ha medido.</p>
+            </div>
+            <div class="paso" data-i="1" role="group" aria-roledescription="diapositiva" aria-label="2 de 6">
+              <span class="idx">PIEDRA 02</span><h3>Protección</h3>
+              <p>Seguros y gastos médicos. Es la piedra que evita que todo lo demás se caiga cuando algo sale mal.</p>
+            </div>
+            <div class="paso" data-i="2" role="group" aria-roledescription="diapositiva" aria-label="3 de 6">
+              <span class="idx">PIEDRA 03</span><h3>Inversión</h3>
+              <p>Que tu dinero trabaje. Instrumentos elegidos por objetivo y plazo, no por moda.</p>
+            </div>
+            <div class="paso" data-i="3" role="group" aria-roledescription="diapositiva" aria-label="4 de 6">
+              <span class="idx">PIEDRA 04</span><h3>Retiro</h3>
+              <p>Planes personales y PPR. El beneficio fiscal de hoy y el ingreso de mañana.</p>
+            </div>
+            <div class="paso" data-i="4" role="group" aria-roledescription="diapositiva" aria-label="5 de 6">
+              <span class="idx">PIEDRA 05</span><h3>Empresa</h3>
+              <p>Para PyMEs: continuidad, hombres clave y protección de la operación.</p>
+            </div>
+            <div class="paso" data-i="5" role="group" aria-roledescription="diapositiva" aria-label="6 de 6">
+              <span class="idx">LA CLAVE</span><h3>La estrategia</h3>
+              <p>La dovela central. Es la que traba todas las demás y hace que el arco cargue peso. Sin ella hay productos sueltos, no patrimonio.</p>
+            </div>
+          </div>
+        </div>
+
+        <button class="flecha" id="arcoNext" aria-label="Piedra siguiente">›</button>
+      </div>
+    </div>
+
+    <div class="puntos" id="puntos" role="tablist" aria-label="Ir a un paso"></div>
+    <p class="arrastre">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 9l-4 3 4 3M16 9l4 3-4 3M4 12h16"></path></svg>
+      Desliza, o usa las flechas / teclado
+    </p>
+  </div>
+</section>
+
+<!-- ═══ SOLUCIONES ═══ -->
+<section class="pad" id="soluciones">
+  <div class="wrap">
+    <p class="ojo" data-rv="">Soluciones</p>
+    <h2 data-rv="" dl="1" style="margin:.26em 0 0;max-width:16ch">Cada pieza, en su lugar.</h2>
+    <div class="tabs" role="tablist" data-rv="" dl="2">
+      <button role="tab" aria-selected="true" data-t="p">Para personas</button>
+      <button role="tab" aria-selected="false" data-t="e">Para PyMEs</button>
+    </div>
+    <div class="prods" id="gp" data-rv="" dl="2">
+      <div class="prod"><span class="n">01</span><h3>Inversiones</h3><p>Estrategias por objetivo y plazo, con instrumentos que se eligen después de entender para qué es cada peso.</p></div>
+      <div class="prod"><span class="n">02</span><h3>Planes para retiro</h3><p>Construir hoy el ingreso que va a sostenerte cuando dejes de trabajar. Entre más temprano, menos esfuerzo.</p></div>
+      <div class="prod"><span class="n">03</span><h3>PPR</h3><p>Plan Personal de Retiro con beneficio fiscal: deduces hoy y capitalizas a largo plazo.</p></div>
+      <div class="prod"><span class="n">04</span><h3>Seguros de vida</h3><p>Que un imprevisto no se lleve el patrimonio que llevas años construyendo.</p></div>
+      <div class="prod"><span class="n">05</span><h3>Gastos médicos mayores</h3><p>La cobertura que evita que una hospitalización se convierta en una deuda.</p></div>
+      <div class="prod"><span class="n">06</span><h3>Diagnóstico patrimonial</h3><p>El punto de partida: dónde estás, qué te falta y en qué orden conviene resolverlo.</p></div>
+    </div>
+    <div class="prods oculto" id="ge">
+      <div class="prod"><span class="n">01</span><h3>Gastos médicos colectivo</h3><p>SGMC para tu equipo. Retiene talento, y cuesta menos que contratarlo individualmente.</p></div>
+      <div class="prod"><span class="n">02</span><h3>Seguro de hombre clave</h3><p>SHC. Si falta la persona de la que depende la operación, la empresa tiene con qué sostenerse mientras se reorganiza.</p></div>
+      <div class="prod"><span class="n">03</span><h3>Flotillas</h3><p>Cobertura para el parque vehicular, administrada como una sola póliza y no como veinte.</p></div>
+      <div class="prod"><span class="n">04</span><h3>Embarcaciones</h3><p>Protección para activos marítimos, con coberturas de casco, responsabilidad civil y tripulación.</p></div>
+      <div class="prod"><span class="n">05</span><h3>Aviación</h3><p>Seguros para aeronaves privadas y corporativas, ajustados al uso real de la nave.</p></div>
+      <div class="prod"><span class="n">06</span><h3>Continuidad del negocio</h3><p>La estrategia que mantiene la empresa de pie cuando el dueño falta, se enferma o quiere salir.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ DIAGNÓSTICO ═══ -->
+<section class="pad noche" id="diagnostico">
+  <div class="wrap">
+    <p class="ojo" data-rv="">Empieza por aquí</p>
+    <h2 data-rv="" dl="1" style="margin:.26em 0 0;max-width:16ch">Tu diagnóstico, <em>en tres preguntas.</em></h2>
+    <p class="lede" data-rv="" dl="2" style="margin-top:18px">No es un formulario de contacto disfrazado. Son tres preguntas y al final te decimos en qué orden conviene resolver lo tuyo —aunque no nos contrates.</p>
+    <div class="diag">
+      <div data-rv="" dl="1">
+        <div class="marca"><i class="on"></i><i></i><i></i><i></i></div>
+        <div class="et on" id="e1">
+          <h3>¿Para quién estamos construyendo?</h3>
+          <div class="opc">
+            <button data-v="persona">Para mí y mi familia</button>
+            <button data-v="empresa">Para mi empresa</button>
+            <button data-v="ambos">Para los dos</button>
+          </div>
+        </div>
+        <div class="et" id="e2">
+          <h3>¿Qué te quita el sueño?</h3>
+          <div class="opc">
+            <button data-v="futuro">No saber si voy a poder retirarme</button>
+            <button data-v="riesgo">Que un imprevisto se lleve todo</button>
+            <button data-v="crecer">Que mi dinero no esté creciendo</button>
+            <button data-v="orden">Tener todo regado y sin plan</button>
+          </div>
+        </div>
+        <div class="et" id="e3">
+          <h3>¿Qué tienes armado hoy?</h3>
+          <div class="opc">
+            <button data-v="nada">Prácticamente nada</button>
+            <button data-v="algo">Algo suelto, sin estrategia</button>
+            <button data-v="bastante">Bastante, quiero optimizarlo</button>
+          </div>
+        </div>
+        <div class="et" id="e4">
+          <h3 style="margin-bottom:6px">Tu plan está listo.</h3>
+          <p class="min" style="margin-bottom:18px">Déjanos a dónde mandártelo y te lo explicamos sin compromiso.</p>
+          <div class="d2">
+            <div class="campo"><label for="dNom">Tu nombre</label><input type="text" id="dNom" placeholder="Nombre y apellido" autocomplete="name"></div>
+            <div class="campo"><label for="dTel">Tu WhatsApp</label><input type="tel" id="dTel" placeholder="10 dígitos" autocomplete="tel"></div>
+          </div>
+          <button class="btn oro" id="dEnv" style="width:100%">Recibir mi plan</button>
+          <p class="min" id="dErr" style="margin-top:11px"></p>
+        </div>
+      </div>
+      <div class="plano" data-rv="" dl="2">
+        <canvas id="planoC" aria-hidden="true" width="596" height="352"></canvas>
+        <div class="adentro">
+          <span class="ojo">Tu plano</span>
+          <h3 id="pTit" style="margin:12px 0 4px">Contesta para verlo</h3>
+          <p class="min" id="pSub">Cada respuesta acomoda una piedra distinta.</p>
+          <ul id="pLista"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ ESCUELA ═══ -->
+<section class="pad crema" id="escuela">
+  <div class="wrap">
+    <p class="ojo" data-rv="">Escuela Plano Capital</p>
+    <h2 data-rv="" dl="1" style="margin:.26em 0 0;max-width:17ch">Lo que debieron enseñarte <em>y nadie te enseñó.</em></h2>
+    <p class="lede" data-rv="" dl="2" style="margin-top:18px">Lecciones cortas, en español claro y sin vendernos nada. Aquí empieza el valor: si sales sabiendo más, ya ganamos los dos.</p>
+    <div class="lecs">
+      <a class="lec" href="#" data-rv=""><div class="cab"><canvas data-sem="interes" width="596" height="334"></canvas><span>MÓDULO 01</span></div>
+        <div class="cu"><h3>Interés compuesto</h3><p>Por qué el tiempo pesa más que el monto, y por qué empezar tarde cuesta tanto.</p>
+        <div class="pie"><span>4 lecciones</span><span>18 min</span></div></div></a>
+      <a class="lec" href="#" data-rv="" dl="1"><div class="cab"><canvas data-sem="riesgo" width="596" height="334"></canvas><span>MÓDULO 02</span></div>
+        <div class="cu"><h3>Proteger antes de crecer</h3><p>Qué asegurar primero, cuánta cobertura es suficiente y qué letras chiquitas sí importan.</p>
+        <div class="pie"><span>5 lecciones</span><span>24 min</span></div></div></a>
+      <a class="lec" href="#" data-rv="" dl="2"><div class="cab"><canvas data-sem="retiro" width="596" height="334"></canvas><span>MÓDULO 03</span></div>
+        <div class="cu"><h3>Retiro sin sustos</h3><p>Afore, PPR y ahorro voluntario: qué hace cada uno y cómo se complementan.</p>
+        <div class="pie"><span>4 lecciones</span><span>20 min</span></div></div></a>
+      <a class="lec" href="#" data-rv=""><div class="cab"><canvas data-sem="pyme" width="596" height="334"></canvas><span>MÓDULO 04</span></div>
+        <div class="cu"><h3>Finanzas de una PyME</h3><p>Separar la bolsa personal de la empresa, y qué riesgos sí pueden tumbar un negocio sano.</p>
+        <div class="pie"><span>6 lecciones</span><span>32 min</span></div></div></a>
+      <a class="lec" href="#" data-rv="" dl="1"><div class="cab"><canvas data-sem="fiscal" width="596" height="334"></canvas><span>MÓDULO 05</span></div>
+        <div class="cu"><h3>El lado fiscal</h3><p>Deducciones que sí existen, cómo funciona el beneficio del PPR y qué documentar.</p>
+        <div class="pie"><span>3 lecciones</span><span>15 min</span></div></div></a>
+      <a class="lec" href="#" data-rv="" dl="2"><div class="cab"><canvas data-sem="inversion" width="596" height="334"></canvas><span>MÓDULO 06</span></div>
+        <div class="cu"><h3>Instrumentos, en simple</h3><p>Cetes, fondos, seguros dotales y unit link: qué es cada uno, sin palabras raras.</p>
+        <div class="pie"><span>5 lecciones</span><span>26 min</span></div></div></a>
+    </div>
+    <p class="min" data-rv="" dl="2" style="margin-top:22px">El contenido de la escuela se carga desde tu panel. Los módulos de arriba son la estructura propuesta.</p>
+  </div>
+</section>
+
+<!-- ═══ ANÁLISIS ═══ -->
+<section class="pad" id="analisis">
+  <div class="wrap">
+    <p class="ojo" data-rv="">Análisis</p>
+    <h2 data-rv="" dl="1" style="margin:.26em 0 0;max-width:16ch">Lo que está pasando, <em>explicado.</em></h2>
+    <div class="arts">
+      <a class="art" href="#" data-rv=""><span class="cat">Inversión</span>
+        <h3>El costo real de dejar el dinero en la cuenta de nómina</h3>
+        <p>Qué le pasa a cien mil pesos guardados diez años, contra los mismos cien mil trabajando.</p>
+        <div class="pie">Lectura de 6 min</div></a>
+      <a class="art" href="#" data-rv="" dl="1"><span class="cat">PyMEs</span>
+        <h3>Qué pasa con tu empresa si mañana faltas</h3>
+        <p>El seguro de hombre clave, explicado con un caso real de una empresa familiar.</p>
+        <div class="pie">Lectura de 5 min</div></a>
+      <a class="art" href="#" data-rv="" dl="2"><span class="cat">Retiro</span>
+        <h3>Tu Afore no va a alcanzar. Los números</h3>
+        <p>Cuánto vas a recibir realmente y cuánto falta para sostener tu nivel de vida.</p>
+        <div class="pie">Lectura de 7 min</div></a>
+    </div>
+    <p class="min" data-rv="" dl="2" style="margin-top:22px">Los artículos se publican desde tu panel, sin depender de nosotros.</p>
+  </div>
+</section>
+
+<!-- ═══ ECOSISTEMA ═══ -->
+<section class="pad crema">
+  <div class="wrap eco">
+    <div data-rv="">
+      <p class="ojo">Quiénes somos</p>
+      <p class="cita" style="margin:18px 0 0">"Plano Capital es un ecosistema de expertos que exploran tus finanzas, detectan áreas de oportunidad y generan estrategias diseñadas para optimizar tu operación."</p>
+      <p class="lede" style="margin-top:20px">Cada experto trabaja en su área de especialidad, aportando a una estrategia en común. No somos un vendedor con catálogo: somos el equipo que arma el plano completo.</p>
+    </div>
+    <div class="pilares" data-rv="" dl="1">
+      <div class="pilar"><b>01</b><span>Exploramos tus finanzas completas antes de proponer nada.</span></div>
+      <div class="pilar"><b>02</b><span>Detectamos las áreas de oportunidad que no se ven desde adentro.</span></div>
+      <div class="pilar"><b>03</b><span>Diseñamos una estrategia donde cada producto sostiene al siguiente.</span></div>
+      <div class="pilar"><b>04</b><span>Acompañamos la ejecución y la revisamos cuando tu vida cambia.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CONTACTO ═══ -->
+<section class="pad noche" id="contacto">
+  <div class="wrap">
+    <p class="ojo" data-rv="">Hablemos</p>
+    <h2 data-rv="" dl="1" style="margin:.26em 0 0;max-width:15ch">Construyamos tu <em>plano.</em></h2>
+    <p class="lede" data-rv="" dl="2" style="margin-top:18px">Cuéntanos dónde estás. La primera conversación es para entender, no para vender.</p>
+    <div style="max-width:600px;margin-top:clamp(28px,3.6vw,44px)" data-rv="" dl="2">
+      <div class="d2">
+        <div class="campo"><label for="cNom">Tu nombre</label><input type="text" id="cNom" placeholder="Nombre y apellido" autocomplete="name"></div>
+        <div class="campo"><label for="cTel">Tu WhatsApp</label><input type="tel" id="cTel" placeholder="10 dígitos" autocomplete="tel"></div>
+      </div>
+      <div class="campo"><label for="cPerfil">¿Qué te interesa?</label>
+        <select id="cPerfil">
+          <option>Diagnóstico patrimonial</option>
+          <option>Inversiones y retiro</option>
+          <option>Seguros y protección</option>
+          <option>Soluciones para mi PyME</option>
+          <option>Todavía no lo sé</option>
+        </select></div>
+      <div class="campo"><label for="cMsg">Cuéntanos un poco más</label><textarea id="cMsg" rows="3" placeholder="Tu situación, tus dudas o lo que ya tienes armado."></textarea></div>
+      <button class="btn oro" id="cEnv" style="width:100%">Enviar por WhatsApp</button>
+      <p class="min" id="cErr" style="margin-top:11px"></p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">
+  <div class="fg">
+    <div>
+      <a href="#inicio" class="wordmark" aria-label="Plano Capital"><span></span><b>Plano Capital</b></a>
+      <p style="margin-top:16px;max-width:32ch">Finanzas para Mexicanos.<br>Construimos tu futuro.</p>
+    </div>
+    <div><h5>Soluciones</h5>
+      <p><a href="#soluciones">Para personas</a></p><p><a href="#soluciones">Para PyMEs</a></p>
+      <p><a href="#escuela">Escuela</a></p><p><a href="#analisis">Análisis</a></p></div>
+    <div><h5>Contacto</h5>
+      <p><a href="https://wa.me/525514660228" target="_blank" rel="noopener">(55) 1466 0228</a></p>
+      <p><a href="mailto:patrimoniobrunogarcia@gmail.com">patrimoniobrunogarcia@gmail.com</a></p>
+      <p style="margin-top:10px">Lago Alberto 319, Colonia Granada,<br>Miguel Hidalgo, CDMX</p></div>
+  </div>
+  <div class="legal">
+    Plano Capital es una agencia de servicios financieros. Las proyecciones y calculadoras de este sitio tienen fines educativos e informativos; no constituyen una recomendación de inversión ni garantizan rendimientos. Los productos de seguros e inversión son emitidos por las instituciones autorizadas correspondientes y están sujetos a sus términos y condiciones.
+    <br>Vista previa de propuesta — réplica de práctica, sin afiliación con el sitio original.
+  </div>
+</div></footer>
+
+<script>
+(function(){
+"use strict";
+var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var ORO="#C49303", TINTA="#1B2631", PETRO="#154360";
+function $(i){ return document.getElementById(i); }
+function mx(n){ return "$"+Math.round(n).toLocaleString("es-MX"); }
+
+/* ══ EL ARCO: geometría compartida ══ */
+function dibujaArco(ctx,W,H,prog,opc){
+  opc=opc||{};
+  var N=opc.dovelas||13;
+  var cx=W/2, base=H*0.86;
+  var R=Math.min(W*0.40,H*0.44);
+  var gr=R*0.26;
+  var Ri=R-gr;
+  var colB=opc.oscuro?"#22303D":"#1B2631";
+  var colC=opc.oscuro?"#0F1922":"#101820";
+  ctx.clearRect(0,0,W,H);
+
+  var cim=Math.max(0,1-Math.max(0,(prog-0.72))/0.28);
+  if(cim>0.01){
+    ctx.save(); ctx.globalAlpha=cim*0.5;
+    ctx.strokeStyle=opc.oscuro?"rgba(238,241,244,.34)":"rgba(27,38,49,.28)";
+    ctx.lineWidth=1; ctx.setLineDash([4,5]);
+    ctx.beginPath(); ctx.arc(cx,base,Ri,Math.PI,0); ctx.stroke();
+    for(var c=0;c<=6;c++){
+      var ang=Math.PI+(c/6)*Math.PI;
+      ctx.beginPath(); ctx.moveTo(cx+Math.cos(ang)*Ri,base+Math.sin(ang)*Ri);
+      ctx.lineTo(cx+Math.cos(ang)*Ri*0.12,base); ctx.stroke();
+    }
+    ctx.setLineDash([]); ctx.restore();
+  }
+
+  var colW=gr*1.16, colH=H*0.30*Math.min(1,prog/0.12);
+  if(colH>1){
+    ctx.fillStyle=colB;
+    [-1,1].forEach(function(s){
+      var x=cx+s*(Ri+gr/2)-colW/2;
+      ctx.fillRect(x, base, colW, colH);
+      ctx.fillRect(x-colW*0.14, base-colW*0.14, colW*1.28, colW*0.16);
+    });
+  }
+
+  var orden=[];
+  var med=(N-1)/2;
+  for(var k=0;k<med;k++){ orden.push(k); orden.push(N-1-k); }
+  orden.push(med);
+  var vis=Math.floor(Math.max(0,(prog-0.12)/0.88)*N+0.0001);
+  var sep=0.008;
+  for(var i=0;i<orden.length;i++){
+    if(i>=vis) break;
+    var d=orden[i];
+    var a1=Math.PI+(d/N)*Math.PI+sep, a2=Math.PI+((d+1)/N)*Math.PI-sep;
+    var esClave=(d===med);
+    var t=1;
+    if(i===vis-1){ var f=Math.max(0,(prog-0.12)/0.88)*N-(vis-1); t=Math.min(1,f*1.6); }
+    var caida=(1-t)*R*0.30;
+    ctx.save();
+    ctx.globalAlpha=Math.min(1,t*1.4);
+    ctx.beginPath();
+    ctx.arc(cx,base-caida,R,a1,a2);
+    ctx.arc(cx,base-caida,Ri,a2,a1,true);
+    ctx.closePath();
+    ctx.fillStyle=esClave?colC:ORO;
+    ctx.fill();
+    ctx.restore();
+  }
+  return {N:N, vis:vis};
+}
+
+function LienzoArco(cv,opc){
+  var ctx=cv.getContext("2d"); if(!ctx) return null;
+  var W=0,H=0,DPR=1,prog=(opc&&opc.prog)||0;
+  function medir(){ W=cv.clientWidth;H=cv.clientHeight; if(!W||!H) return false;
+    DPR=Math.min(window.devicePixelRatio||1,2);
+    cv.width=Math.round(W*DPR); cv.height=Math.round(H*DPR); ctx.setTransform(DPR,0,0,DPR,0,0); return true; }
+  function pinta(p){ if(p!==undefined) prog=p; if(W&&H) dibujaArco(ctx,W,H,prog,opc); }
+  if(!medir()) return null;
+  pinta();
+  var rt; window.addEventListener("resize",function(){ clearTimeout(rt); rt=setTimeout(function(){ if(medir()) pinta(); },180); });
+  return { pinta:pinta, medir:medir };
+}
+
+/* hero: el arco se construye una vez, al entrar */
+(function(){
+  var cv=$("arcoHero"); if(!cv) return;
+  var A=LienzoArco(cv,{dovelas:13}); if(!A) return;
+  if(reduce){ A.pinta(1); return; }
+  var t0=null, dur=2600, corriendo=false;
+  function paso(ts){
+    if(!t0) t0=ts;
+    var k=Math.min(1,(ts-t0)/dur);
+    A.pinta(1-Math.pow(1-k,2.4));
+    if(k<1) requestAnimationFrame(paso);
+  }
+  function arranca(){ if(corriendo) return; corriendo=true; requestAnimationFrame(paso); }
+  if("IntersectionObserver" in window)
+    new IntersectionObserver(function(e){ if(e[0].isIntersecting) arranca(); },{threshold:.2}).observe(cv);
+  else arranca();
+})();
+
+/* ══ "Cómo construimos": carrusel horizontal deslizable ══
+   Antes: sección pegajosa (position:sticky) de 574svh que avanzaba con el
+   scroll vertical de la página. Ahora: una sola pantalla; se desliza con el
+   dedo / mouse / flechas / teclado y el arco se anima hacia el paso elegido. */
+(function(){
+  var cv=$("arcoC"); if(!cv) return;
+  var A=LienzoArco(cv,{dovelas:13,oscuro:true}); if(!A) return;
+  var pista=$("pista"), rieles=$("rieles"), pasos=Array.prototype.slice.call(rieles.children);
+  var N=pasos.length, idx=0;
+  var prevB=$("arcoPrev"), nextB=$("arcoNext"), ptsWrap=$("puntos");
+
+  pasos.forEach(function(_,i){
+    var b=document.createElement("button");
+    b.setAttribute("role","tab");
+    b.setAttribute("aria-label","Ir a la piedra "+(i+1)+" de "+N);
+    b.addEventListener("click",function(){ ir(i); });
+    ptsWrap.appendChild(b);
+  });
+  var dots=Array.prototype.slice.call(ptsWrap.children);
+
+  function progresoDe(i){ return 0.12 + ((i+1)/N)*0.88; }
+
+  var progActual=0, progObjetivo=progresoDe(0), animando=false;
+  function animaArco(){
+    progActual += (progObjetivo-progActual)*0.16;
+    if(Math.abs(progObjetivo-progActual)<0.0015){ progActual=progObjetivo; animando=false; A.pinta(progActual); return; }
+    A.pinta(progActual);
+    requestAnimationFrame(animaArco);
+  }
+
+  function ir(i){
+    idx=Math.max(0,Math.min(N-1,i));
+    rieles.style.transform="translateX(-"+(idx*100)+"%)";
+    pasos.forEach(function(p,k){ p.setAttribute("aria-hidden",k===idx?"false":"true"); });
+    dots.forEach(function(d,k){
+      d.classList.toggle("on",k===idx);
+      d.setAttribute("aria-selected",k===idx?"true":"false");
+    });
+    prevB.disabled=idx===0; nextB.disabled=idx===N-1;
+    progObjetivo=progresoDe(idx);
+    if(reduce){ A.pinta(progObjetivo); progActual=progObjetivo; }
+    else if(!animando){ animando=true; requestAnimationFrame(animaArco); }
+  }
+
+  prevB.addEventListener("click",function(){ ir(idx-1); });
+  nextB.addEventListener("click",function(){ ir(idx+1); });
+
+  /* arrastre: pointer events cubren mouse, touch y stylus a la vez.
+     touch-action:pan-y en CSS deja que el scroll vertical de la página
+     siga funcionando de forma nativa mientras decidimos si el gesto es horizontal. */
+  var startX=0, startY=0, dx=0, arrastrando=false, decidido=null;
+  function inicio(x,y){ startX=x; startY=y; dx=0; arrastrando=true; decidido=null; rieles.style.transition="none"; }
+  function mueve(x,y){
+    if(!arrastrando) return;
+    dx=x-startX; var dy=y-startY;
+    if(decidido===null && (Math.abs(dx)>6||Math.abs(dy)>6)) decidido = Math.abs(dx)>Math.abs(dy) ? "x":"y";
+    if(decidido==="x") rieles.style.transform="translateX(calc(-"+(idx*100)+"% + "+dx+"px))";
+  }
+  function fin(){
+    if(!arrastrando) return;
+    arrastrando=false; rieles.style.transition="";
+    if(decidido==="x"){
+      var ancho=pista.clientWidth||1;
+      if(dx< -ancho*0.15 && idx<N-1) ir(idx+1);
+      else if(dx>ancho*0.15 && idx>0) ir(idx-1);
+      else ir(idx);
+    }
+    decidido=null;
+  }
+  pista.addEventListener("pointerdown",function(e){ inicio(e.clientX,e.clientY); try{pista.setPointerCapture(e.pointerId);}catch(err){} });
+  pista.addEventListener("pointermove",function(e){ mueve(e.clientX,e.clientY); });
+  pista.addEventListener("pointerup",fin);
+  pista.addEventListener("pointercancel",fin);
+  pista.addEventListener("pointerleave",function(){ if(arrastrando) fin(); });
+  pista.addEventListener("keydown",function(e){
+    if(e.key==="ArrowRight"){ ir(idx+1); e.preventDefault(); }
+    if(e.key==="ArrowLeft"){ ir(idx-1); e.preventDefault(); }
+  });
+
+  ir(0);
+})();
+
+/* ══ CALCULADORA: el costo de no invertir ══ */
+(function(){
+  var a=$("aporte"), n=$("anios"), t=$("tasa"), cv=$("lienzo");
+  if(!a||!cv) return;
+  var ctx=cv.getContext("2d"), W=0,H=0,DPR=1, serieA=[], serieB=[], anim=0;
+  function medir(){ W=cv.clientWidth;H=cv.clientHeight; if(!W||!H) return false;
+    DPR=Math.min(window.devicePixelRatio||1,2);
+    cv.width=Math.round(W*DPR); cv.height=Math.round(H*DPR); ctx.setTransform(DPR,0,0,DPR,0,0); return true; }
+  function calcula(){
+    var P=+a.value, Y=+n.value, R=+t.value/100, i=R/12, m=Y*12;
+    serieA=[]; serieB=[];
+    for(var k=0;k<=Y;k++){
+      var meses=k*12;
+      serieB.push(P*meses);
+      serieA.push(i>0 ? P*((Math.pow(1+i,meses)-1)/i) : P*meses);
+    }
+    var fin=serieA[Y], sin=serieB[Y];
+    $("vAporte").textContent=mx(P);
+    $("vAnios").textContent=Y+" años";
+    $("vTasa").textContent=(+t.value).toFixed(1)+"%";
+    $("rBanco").textContent=mx(sin);
+    $("rPlano").textContent=mx(fin);
+    $("brecha").innerHTML="La diferencia son <b>"+mx(fin-sin)+"</b>. No los pierdes de golpe: los dejas de ganar, un mes a la vez.";
+    [a,n,t].forEach(function(s){ s.style.setProperty("--p",((s.value-s.min)/(s.max-s.min)*100)+"%"); });
+    anim=0; if(!reduce) requestAnimationFrame(sube); else pinta(1);
+  }
+  function sube(){ anim=Math.min(1,anim+0.06); pinta(anim); if(anim<1) requestAnimationFrame(sube); }
+  function pinta(k){
+    if(!W&&!medir()) return;
+    ctx.clearRect(0,0,W,H);
+    var pad={l:8,r:8,t:14,b:22};
+    var maxV=serieA[serieA.length-1]||1;
+    var X=function(idx){ return pad.l+(idx/(serieA.length-1))*(W-pad.l-pad.r); };
+    var Y=function(v){ return H-pad.b-(v/maxV)*(H-pad.t-pad.b); };
+    ctx.strokeStyle="rgba(255,255,255,.09)"; ctx.lineWidth=1;
+    for(var g=0;g<=3;g++){ var y=pad.t+(g/3)*(H-pad.t-pad.b);
+      ctx.beginPath(); ctx.moveTo(pad.l,y); ctx.lineTo(W-pad.r,y); ctx.stroke(); }
+    function linea(S,col,relleno){
+      var hasta=Math.max(1,Math.floor(S.length*k));
+      ctx.beginPath();
+      for(var i=0;i<hasta;i++){ var x=X(i),y=Y(S[i]); i?ctx.lineTo(x,y):ctx.moveTo(x,y); }
+      if(relleno){
+        ctx.lineTo(X(hasta-1),H-pad.b); ctx.lineTo(X(0),H-pad.b); ctx.closePath();
+        var gr=ctx.createLinearGradient(0,pad.t,0,H-pad.b);
+        gr.addColorStop(0,"rgba(196,147,3,.28)"); gr.addColorStop(1,"rgba(196,147,3,0)");
+        ctx.fillStyle=gr; ctx.fill();
+        ctx.beginPath();
+        for(var j=0;j<hasta;j++){ var x2=X(j),y2=Y(S[j]); j?ctx.lineTo(x2,y2):ctx.moveTo(x2,y2); }
+      }
+      ctx.strokeStyle=col; ctx.lineWidth=2; ctx.stroke();
+      if(hasta>0){ ctx.beginPath(); ctx.arc(X(hasta-1),Y(S[hasta-1]),3.2,0,6.283); ctx.fillStyle=col; ctx.fill(); }
+    }
+    linea(serieB,"rgba(238,241,244,.55)",false);
+    linea(serieA,ORO,true);
+  }
+  [a,n,t].forEach(function(s){ s.addEventListener("input",calcula); });
+  var rt; window.addEventListener("resize",function(){ clearTimeout(rt); rt=setTimeout(function(){ if(medir()) pinta(1); },180); });
+  medir(); calcula();
+})();
+
+/* ══ pestañas de soluciones ══ */
+(function(){
+  var bs=document.querySelectorAll(".tabs button"); if(!bs.length) return;
+  bs.forEach(function(b){
+    b.addEventListener("click",function(){
+      bs.forEach(function(x){ x.setAttribute("aria-selected", x===b ? "true":"false"); });
+      var e=b.getAttribute("data-t")==="e";
+      $("gp").classList.toggle("oculto",e);
+      $("ge").classList.toggle("oculto",!e);
+    });
+  });
+})();
+
+/* ══ diagnóstico ══ */
+(function(){
+  var R={}, et=1, reco=null;
+  var ets=[null,$("e1"),$("e2"),$("e3"),$("e4")], marcas=document.querySelectorAll(".marca i");
+  if(!ets[1]) return;
+  var PLANES={
+    persona:{t:"Plano personal",p:["Diagnóstico patrimonial completo","Protección: vida y gastos médicos mayores","Inversión por objetivo y plazo","PPR con beneficio fiscal"]},
+    empresa:{t:"Plano empresarial",p:["Diagnóstico de riesgos de la operación","Gastos médicos colectivo para el equipo","Seguro de hombre clave","Plan de continuidad del negocio"]},
+    ambos:{t:"Plano mixto",p:["Separar patrimonio personal y de la empresa","Protección en los dos frentes","Inversión con objetivo de retiro","Continuidad y sucesión"]}
+  };
+  var ACENTO={
+    futuro:"Empezaríamos por el retiro: PPR y proyección a tu edad de salida.",
+    riesgo:"Empezaríamos por blindar: vida y gastos médicos antes que cualquier inversión.",
+    crecer:"Empezaríamos por poner a trabajar lo que ya tienes, con instrumentos por plazo.",
+    orden:"Empezaríamos por ordenar: inventario de lo que tienes y en qué orden resolverlo."
+  };
+  function ir(k){
+    ets.forEach(function(e,i){ if(e) e.classList.toggle("on",i===k); });
+    marcas.forEach(function(m,i){ m.classList.toggle("on", i<=Math.min(k-1,3)); });
+    et=k;
+  }
+  function arma(){
+    var base=PLANES[R.q1]||PLANES.persona;
+    reco=base;
+    $("pTit").textContent=base.t;
+    $("pSub").textContent=ACENTO[R.q2]||"";
+    var extra = R.q3==="nada" ? "Arrancamos desde cero, en orden y sin prisa."
+              : R.q3==="algo" ? "Primero conectamos lo que ya tienes; casi siempre sobra producto y falta estrategia."
+              : "Optimización: revisamos costos, coberturas y rendimientos de lo que ya contrataste.";
+    $("pLista").innerHTML=base.p.map(function(x){ return '<li><i>▲</i><span>'+x+'</span></li>'; }).join("")+
+      '<li><i>▲</i><span>'+extra+'</span></li>';
+  }
+  document.querySelectorAll(".opc button").forEach(function(b){
+    b.addEventListener("click",function(){
+      R["q"+et]=b.getAttribute("data-v");
+      if(et<3) ir(et+1); else { arma(); ir(4); }
+    });
+  });
+  var env=$("dEnv");
+  if(env) env.addEventListener("click",function(){
+    var n=$("dNom").value.trim(), t=$("dTel").value.trim(), e=$("dErr");
+    if(!n){ e.textContent="Falta tu nombre."; $("dNom").focus(); return; }
+    if(!t){ e.textContent="Falta tu WhatsApp."; $("dTel").focus(); return; }
+    e.textContent="";
+    var txt="Hola Plano Capital, soy "+n+".\nHice el diagnóstico del sitio:\n"+
+      "• Para: "+(R.q1||"—")+"\n• Me preocupa: "+(R.q2||"—")+"\n• Hoy tengo: "+(R.q3||"—")+"\n"+
+      "Plan sugerido: "+(reco?reco.t:"—")+"\nMi WhatsApp: "+t;
+    window.open("https://wa.me/525514660228?text="+encodeURIComponent(txt),"_blank","noopener");
+  });
+})();
+
+/* ══ sigilos de la escuela: arcos generativos por módulo ══ */
+(function(){
+  document.querySelectorAll("canvas[data-sem]").forEach(function(cv){
+    var ctx=cv.getContext("2d"); if(!ctx) return;
+    var W=cv.clientWidth||400,H=cv.clientHeight||225;
+    if(!W||!H) return;
+    var DPR=Math.min(window.devicePixelRatio||1,2);
+    cv.width=Math.round(W*DPR); cv.height=Math.round(H*DPR); ctx.setTransform(DPR,0,0,DPR,0,0);
+    var s=cv.getAttribute("data-sem"), h=0;
+    for(var i=0;i<s.length;i++) h=(h*31+s.charCodeAt(i))>>>0;
+    function r(k){ var x=Math.sin(h+k*97.13)*43758.5453; return x-Math.floor(x); }
+    ctx.fillStyle="#1B2631"; ctx.fillRect(0,0,W,H);
+    var n=3+Math.floor(r(1)*4), cx=W*(0.24+r(2)*0.5), base=H*1.02;
+    for(var k=0;k<n;k++){
+      var R=H*(0.34+k*(0.13+r(k+3)*0.07));
+      ctx.beginPath(); ctx.arc(cx,base,R,Math.PI,0);
+      ctx.strokeStyle=k===n-1?ORO:"rgba(196,147,3,"+(0.16+k*0.06).toFixed(2)+")";
+      ctx.lineWidth=k===n-1?2:1; ctx.stroke();
+    }
+    var d=7+Math.floor(r(9)*6);
+    for(var j=0;j<d;j++){
+      var a1=Math.PI+(j/d)*Math.PI+0.012, a2=Math.PI+((j+1)/d)*Math.PI-0.012;
+      var Ro=H*0.34, Ri=Ro-H*0.075;
+      if(r(j+20)>0.45) continue;
+      ctx.beginPath(); ctx.arc(cx,base,Ro,a1,a2); ctx.arc(cx,base,Ri,a2,a1,true); ctx.closePath();
+      ctx.fillStyle="rgba(196,147,3,.5)"; ctx.fill();
+    }
+  });
+})();
+
+/* fondo del plano: retícula técnica */
+(function(){
+  var cv=$("planoC"); if(!cv) return;
+  var ctx=cv.getContext("2d"); if(!ctx) return;
+  function pinta(){
+    var W=cv.clientWidth,H=cv.clientHeight; if(!W||!H) return;
+    var DPR=Math.min(window.devicePixelRatio||1,2);
+    cv.width=Math.round(W*DPR); cv.height=Math.round(H*DPR); ctx.setTransform(DPR,0,0,DPR,0,0);
+    ctx.clearRect(0,0,W,H);
+    ctx.strokeStyle="rgba(196,147,3,.16)"; ctx.lineWidth=1;
+    for(var x=0;x<W;x+=26){ ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
+    for(var y=0;y<H;y+=26){ ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(W,y); ctx.stroke(); }
+  }
+  pinta();
+  var rt; window.addEventListener("resize",function(){ clearTimeout(rt); rt=setTimeout(pinta,180); });
+})();
+
+/* ══ reveals ══ */
+(function(){
+  var tg=Array.prototype.slice.call(document.querySelectorAll("[data-rv]"));
+  if(reduce){ tg.forEach(function(e){e.classList.add("vis");}); return; }
+  var pend=false;
+  function revisa(){
+    var vh=window.innerHeight||0;
+    for(var i=tg.length-1;i>=0;i--){
+      var r=tg[i].getBoundingClientRect();
+      if(r.top<vh*0.92 && r.bottom>-80){ tg[i].classList.add("vis"); tg.splice(i,1); }
+    }
+    pend=false;
+  }
+  function pedir(){ if(!pend){ pend=true; requestAnimationFrame(revisa); } }
+  window.addEventListener("scroll",pedir,{passive:true});
+  window.addEventListener("resize",pedir); window.addEventListener("load",pedir);
+  revisa(); setTimeout(revisa,240); setTimeout(revisa,900);
+})();
+
+/* ══ barra ══ */
+(function(){
+  var h=$("hd"), f=$("flot"), tk=false;
+  function upd(){ var y=window.scrollY||0; h.classList.toggle("fija",y>28); f.classList.toggle("on",y>700); tk=false; }
+  window.addEventListener("scroll",function(){ if(!tk){tk=true;requestAnimationFrame(upd);} },{passive:true}); upd();
+  var m=$("mtg");
+  m.addEventListener("click",function(){ var o=h.classList.toggle("abre"); m.setAttribute("aria-expanded",o?"true":"false"); });
+  document.querySelectorAll("nav.nv a").forEach(function(a){
+    a.addEventListener("click",function(){ h.classList.remove("abre"); m.setAttribute("aria-expanded","false"); });
+  });
+})();
+
+/* ══ contacto ══ */
+(function(){
+  var b=$("cEnv"); if(!b) return;
+  b.addEventListener("click",function(){
+    var n=$("cNom").value.trim(), t=$("cTel").value.trim(),
+        p=$("cPerfil").value, m=$("cMsg").value.trim(), e=$("cErr");
+    if(!n){ e.textContent="Falta tu nombre."; $("cNom").focus(); return; }
+    if(!t){ e.textContent="Falta tu WhatsApp."; $("cTel").focus(); return; }
+    e.textContent="";
+    var txt="Hola Plano Capital, soy "+n+".\nMe interesa: "+p+"\nMi WhatsApp: "+t+(m?("\n\n"+m):"");
+    window.open("https://wa.me/525514660228?text="+encodeURIComponent(txt),"_blank","noopener");
+  });
+})();
+})();
+</script>
+</body>
+</html>

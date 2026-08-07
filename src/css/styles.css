@@ -43,6 +43,27 @@ footer .wordmark b{color:#fff;font-size:24px}
 [data-rv].vis{opacity:1;transform:none}
 [data-rv][dl="1"]{transition-delay:.09s}[data-rv][dl="2"]{transition-delay:.18s}[data-rv][dl="3"]{transition-delay:.27s}
 
+/* ── respaldo: marquesina de aseguradoras / afores ── */
+.respaldo{padding:clamp(30px,4vw,46px) 0 clamp(34px,4.6vw,52px);background:var(--papel);
+  border-top:1px solid var(--linea-s);border-bottom:1px solid var(--linea-s)}
+.respaldo .ojo{text-align:center;display:block;letter-spacing:.32em}
+.marquesina{margin-top:20px;overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.pista-m{display:flex;width:max-content;animation:desliza-m 34s linear infinite}
+.marquesina:hover .pista-m,.marquesina:focus-within .pista-m{animation-play-state:paused}
+.fila-m{display:flex;align-items:center;gap:clamp(38px,6vw,76px);padding-right:clamp(38px,6vw,76px)}
+.logo-m{height:clamp(24px,3vw,34px);width:auto;max-width:150px;object-fit:contain;flex:0 0 auto;
+  filter:grayscale(1);opacity:.55;transition:filter .35s,opacity .35s;cursor:default}
+.logo-m:hover{filter:grayscale(0);opacity:1}
+@keyframes desliza-m{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:700px){.fila-m{gap:30px;padding-right:30px}.pista-m{animation-duration:24s}}
+@media(prefers-reduced-motion:reduce){
+  .pista-m{animation:none}
+  .marquesina{overflow-x:auto}
+  .fila-m[aria-hidden="true"]{display:none}
+}
+
 /* ── barra ── */
 header{position:fixed;top:0;left:0;right:0;z-index:80;transition:background .45s var(--e),box-shadow .45s}
 header.fija{background:rgba(251,252,252,.9);backdrop-filter:saturate(180%) blur(18px);box-shadow:0 1px 0 var(--linea-s)}

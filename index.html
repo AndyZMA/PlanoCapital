@@ -20,13 +20,18 @@
   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.7 15l-1.3 4.7 4.9-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.2 1.2-1.7 1.2-.5 0-2.1-.2-4.4-2.2-2.3-2-2.9-3.6-3-4.1-.1-.5.4-1.5 1-1.7.2-.1.5 0 .7.3l.9 1.5c.1.2.1.4 0 .6l-.4.6c-.1.2-.1.4 0 .5.5.8 1.4 1.7 2.3 2.2.2.1.4.1.5-.1l.5-.6c.2-.2.4-.2.6-.1l1.6.8c.3.2.5.4.4.7z"></path></svg></a>
 
 <header id="hd" class="fija"><div class="bar">
-  <a href="#inicio" class="wordmark" aria-label="Plano Capital"><span></span><b>Plano Capital</b></a>
-  <nav class="nv" id="nv">
-    <a href="#costo">El costo de esperar</a>
+<a href="#inicio" class="wordmark" aria-label="Plano Capital">
+  <img
+    src="src/img/icons/PlanoNavCapital.png"
+    alt="Plano Capital"
+    class="wordmark-logo"
+  >
+</a>  <nav class="nv" id="nv">
+    <a href="index.html">Inicio</a>
     <a href="#arco">Cómo construimos</a>
     <a href="#soluciones">Soluciones</a>
-    <a href="#escuela">Escuela</a>
-    <a href="#analisis">Análisis</a>
+    <a href="escuela.html">Escuela</a>
+    <a href="blog.html">Blog</a>
   </nav>
   <button class="mtg" id="mtg" aria-label="Menú" aria-expanded="false"><span></span><span></span><span></span></button>
   <a class="btn sm" href="#diagnostico">Diagnóstico gratis</a>
@@ -36,49 +41,151 @@
 
 <!-- ═══ HERO ═══ -->
 <section class="hero">
-  <canvas id="arcoHero" aria-hidden="true" width="596" height="632"></canvas>
-  <div class="wrap">
-    <p class="ojo vis" data-rv="">Agencia de servicios financieros</p>
-    <h1 data-rv="" dl="1" class="vis">Finanzas para <em>Mexicanos.</em></h1>
-    <p class="lede vis" data-rv="" dl="2">Un arco no se sostiene solo: cada piedra empuja contra la siguiente. Tu patrimonio funciona igual. Somos el ecosistema de expertos que coloca cada pieza en su lugar —y la clave que las traba.</p>
-    <div class="cta vis" data-rv="" dl="3">
-      <a class="btn oro" href="#diagnostico">Haz tu diagnóstico</a>
-      <a class="btn linea" href="#costo">Cuánto cuesta esperar</a>
-    </div>
-    <div class="sello vis" data-rv="" dl="3">
-      <div><b>Personas</b><span>y personas de alto potencial</span></div>
-      <div><b>PyMEs</b><span>protección y continuidad</span></div>
-      <div><b>Polanco</b><span>Ciudad de México</span></div>
-    </div>
-  </div>
-</section>
 
+  <!-- Símbolo de marca -->
+  <div class="hero-arco" aria-hidden="true">
+    <img
+      src="src/img/icons/Arco.png"
+      alt=""
+    >
+  </div>
+
+  <div class="wrap">
+
+    <p class="ojo vis" data-rv>
+      Agencia de servicios financieros
+    </p>
+
+    <h1 class="vis" data-rv dl="1">
+      Finanzas para <em>Mexicanos.</em>
+    </h1>
+
+    <p class="lede vis" data-rv dl="2">
+      Un arco no se sostiene solo: cada piedra empuja contra la siguiente.
+      Tu patrimonio funciona igual. Somos el ecosistema de expertos que
+      coloca cada pieza en su lugar.
+    </p>
+
+
+    <!-- CTAs -->
+    <div class="cta vis" data-rv dl="3">
+
+      <a class="btn oro" href="#diagnostico">
+        Haz tu diagnóstico
+      </a>
+
+      <a class="btn linea" href="#costo">
+        Cuánto cuesta esperar
+      </a>
+
+    </div>
+
+
+    <!-- Propuesta de valor -->
+    <div class="sello vis" data-rv dl="3">
+
+      <div class="sello-item">
+        <span class="sello-num">01</span>
+
+        <div>
+          <b>Entender antes de vender.</b>
+
+          <span>
+            Primero analizamos tu situación.
+            Después construimos la estrategia.
+          </span>
+        </div>
+      </div>
+
+
+      <div class="sello-item">
+        <span class="sello-num">02</span>
+
+        <div>
+          <b>Una estrategia completa.</b>
+
+          <span>
+            Protección, inversión y patrimonio
+            trabajando como un sistema.
+          </span>
+        </div>
+      </div>
+
+
+      <div class="sello-item">
+        <span class="sello-num">03</span>
+
+        <div>
+          <b>Personas y PyMEs.</b>
+
+          <span>
+            Soluciones para tu patrimonio personal
+            y para la continuidad de tu empresa.
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 <!-- ═══ RESPALDO: aseguradoras y afores ═══ -->
 <section class="respaldo">
-  <div class="wrap"><p class="ojo">Respaldados por</p></div>
-  <div class="marquesina" aria-label="Aseguradoras y afores con las que trabajamos">
-    <div class="pista-m">
-      <div class="fila-m" aria-hidden="false">
-        <img class="logo-m" src="assets/logos/metlife.png" alt="MetLife" loading="lazy">
-        <img class="logo-m" src="assets/logos/gnp.png" alt="GNP Seguros" loading="lazy">
-        <img class="logo-m" src="assets/logos/axa.png" alt="AXA" loading="lazy">
-        <img class="logo-m" src="assets/logos/allianz.png" alt="Allianz" loading="lazy">
-        <img class="logo-m" src="assets/logos/zurich.png" alt="Zurich" loading="lazy">
-        <img class="logo-m" src="assets/logos/chubb.png" alt="Chubb" loading="lazy">
-        <img class="logo-m" src="assets/logos/segurosmonterrey.png" alt="Seguros Monterrey" loading="lazy">
-        
+  <div class="wrap">
+    <p class="ojo">Respaldados por</p>
+  </div>
+
+  <div
+    class="marquesina"
+    aria-label="Aseguradoras y entidades con las que trabajamos"
+  >
+    <div class="pista-m" id="pistaLogos">
+
+      <div class="fila-m">
+        <img
+          class="logo-m"
+          src="src/img/clientes/HDI.png"
+          alt="HDI"
+        >
+
+        <img
+          class="logo-m"
+          src="src/img/clientes/Mapfre.png"
+          alt="Mapfre"
+        >
+
+        <img
+          class="logo-m"
+          src="src/img/clientes/GNP.png"
+          alt="GNP"
+        >
+
+        <img
+          class="logo-m"
+          src="src/img/clientes/LogoPRUD.png"
+          alt="Prudential"
+        >
+
+        <img
+          class="logo-m"
+          src="src/img/clientes/LogoMetLife.png"
+          alt="MetLife"
+        >
+
+        <img
+          class="logo-m"
+          src="src/img/clientes/CNBV.png"
+          alt="CNBV"
+        >
+
+        <img
+          class="logo-m"
+          src="src/img/clientes/CNSF.png"
+          alt="CNSF"
+        >
       </div>
-      <div class="fila-m" aria-hidden="true">
-        <img class="logo-m" src="assets/logos/metlife.png" alt="" loading="lazy">
-        <img class="logo-m" src="assets/logos/gnp.png" alt="" loading="lazy">
-        <img class="logo-m" src="assets/logos/axa.png" alt="" loading="lazy">
-        <img class="logo-m" src="assets/logos/allianz.png" alt="" loading="lazy">
-        <img class="logo-m" src="assets/logos/zurich.png" alt="" loading="lazy">
-        <img class="logo-m" src="assets/logos/chubb.png" alt="" loading="lazy">
-        <img class="logo-m" src="assets/logos/segurosmonterrey.png" alt="" loading="lazy">
-        <img class="logo-m" src="assets/logos/afore-xxi-banorte.png" alt="" loading="lazy">
-        <img class="logo-m" src="assets/logos/profuturo.png" alt="" loading="lazy">
-      </div>
+
     </div>
   </div>
 </section>
@@ -89,7 +196,9 @@
     <p class="ojo vis" data-rv="">El problema que atendemos</p>
     <h2 data-rv="" dl="1" style="margin:.26em 0 0;max-width:18ch" class="vis">Nadie nos enseñó a manejar el dinero. <em>Y se nota.</em></h2>
     <p class="lede vis" data-rv="" dl="2" style="margin-top:20px;max-width:56ch">El problema principal que atiende Plano Capital no es la falta de dinero: es la falta de guía. La mayoría de las decisiones financieras en México se toman sin información, sin comparar y sin un plan que las conecte.</p>
-    <p class="lede vis" data-rv="" dl="2" style="margin-top:14px;max-width:56ch">Por eso este sitio empieza por enseñarte, no por venderte. Abajo hay una calculadora, un diagnóstico y una escuela. Todo abierto, todo gratis, antes de que hables con nosotros.</p>
+    <p class="lede vis" data-rv="" dl="2" style="margin-top:14px;max-width:56ch">Por eso este sitio empieza por enseñarte, para después desarrollar e implementar una estrategia que te ayude a construir tu patrimonio.</p>
+    <p class="lede vis" data-rv="" dl="2" style="margin-top:14px;max-width:56ch">Queremos aportar valor a la sociedad mexicana; por ello, preparamos una escuela virtual completamente gratuita para ti. Además, reunimos a las nuevas mentes de las finanzas mexicanas en nuestro foro. ¡Visítalo!</p>
+
   </div>
 </section>
 
@@ -182,30 +291,151 @@
 </section>
 
 <!-- ═══ SOLUCIONES ═══ -->
-<section class="pad" id="soluciones">
+<section class="pad soluciones-duales" id="soluciones">
   <div class="wrap">
-    <p class="ojo" data-rv="">Soluciones</p>
-    <h2 data-rv="" dl="1" style="margin:.26em 0 0;max-width:16ch">Cada pieza, en su lugar.</h2>
-    <div class="tabs" role="tablist" data-rv="" dl="2">
-      <button role="tab" aria-selected="true" data-t="p">Para personas</button>
-      <button role="tab" aria-selected="false" data-t="e">Para PyMEs</button>
+
+    <div class="soluciones-head">
+      <div>
+        <p class="ojo">Soluciones</p>
+        <h2>Cada pieza, <em>en su lugar.</em></h2>
+      </div>
+
+      <p class="lede">
+        Diseñamos estrategias tanto para tu patrimonio personal
+        como para la continuidad y protección de tu empresa.
+      </p>
     </div>
-    <div class="prods" id="gp" data-rv="" dl="2">
-      <div class="prod"><span class="n">01</span><h3>Inversiones</h3><p>Estrategias por objetivo y plazo, con instrumentos que se eligen después de entender para qué es cada peso.</p></div>
-      <div class="prod"><span class="n">02</span><h3>Planes para retiro</h3><p>Construir hoy el ingreso que va a sostenerte cuando dejes de trabajar. Entre más temprano, menos esfuerzo.</p></div>
-      <div class="prod"><span class="n">03</span><h3>PPR</h3><p>Plan Personal de Retiro con beneficio fiscal: deduces hoy y capitalizas a largo plazo.</p></div>
-      <div class="prod"><span class="n">04</span><h3>Seguros de vida</h3><p>Que un imprevisto no se lleve el patrimonio que llevas años construyendo.</p></div>
-      <div class="prod"><span class="n">05</span><h3>Gastos médicos mayores</h3><p>La cobertura que evita que una hospitalización se convierta en una deuda.</p></div>
-      <div class="prod"><span class="n">06</span><h3>Diagnóstico patrimonial</h3><p>El punto de partida: dónde estás, qué te falta y en qué orden conviene resolverlo.</p></div>
+
+
+    <div class="soluciones-grid">
+
+      <!-- PERSONAS -->
+      <article class="solucion-bloque solucion-personas">
+
+        <div class="solucion-cabecera">
+          <span class="solucion-num">01</span>
+
+          <div>
+            <span class="solucion-label">Patrimonio personal</span>
+            <h3>Para personas</h3>
+            <p>
+              Protege lo que tienes, haz crecer tu dinero
+              y construye una estrategia para el futuro.
+            </p>
+          </div>
+        </div>
+
+        <div class="solucion-lista">
+
+          <div class="solucion-item">
+            <span>01</span>
+            <h4>Inversiones</h4>
+            <p>Estrategias por objetivo y plazo.</p>
+          </div>
+
+          <div class="solucion-item">
+            <span>02</span>
+            <h4>Planes para retiro</h4>
+            <p>Construye hoy el ingreso de mañana.</p>
+          </div>
+
+          <div class="solucion-item">
+            <span>03</span>
+            <h4>PPR</h4>
+            <p>Planeación de retiro con beneficio fiscal.</p>
+          </div>
+
+          <div class="solucion-item">
+            <span>04</span>
+            <h4>Seguros de vida</h4>
+            <p>Protección para ti y tu patrimonio.</p>
+          </div>
+
+          <div class="solucion-item">
+            <span>05</span>
+            <h4>Gastos médicos mayores</h4>
+            <p>Cobertura ante gastos inesperados.</p>
+          </div>
+
+          <div class="solucion-item">
+            <span>06</span>
+            <h4>Diagnóstico patrimonial</h4>
+            <p>Descubre dónde estás y qué sigue.</p>
+          </div>
+
+        </div>
+
+        <a href="#diagnostico" class="solucion-link">
+          Construir mi estrategia →
+        </a>
+
+      </article>
+
+
+      <!-- PYMES -->
+      <article class="solucion-bloque solucion-pymes">
+
+        <div class="solucion-cabecera">
+          <span class="solucion-num">02</span>
+
+          <div>
+            <span class="solucion-label">Protección empresarial</span>
+            <h3>Para PyMEs</h3>
+            <p>
+              Protege la operación, las personas clave
+              y los activos que mantienen tu empresa en marcha.
+            </p>
+          </div>
+        </div>
+
+        <div class="solucion-lista">
+
+          <div class="solucion-item">
+            <span>01</span>
+            <h4>Gastos médicos colectivo</h4>
+            <p>Protección para tu equipo.</p>
+          </div>
+
+          <div class="solucion-item">
+            <span>02</span>
+            <h4>Seguro de hombre clave</h4>
+            <p>Reduce el riesgo operativo.</p>
+          </div>
+
+          <div class="solucion-item">
+            <span>03</span>
+            <h4>Flotillas</h4>
+            <p>Protección integral para tus vehículos.</p>
+          </div>
+
+          <div class="solucion-item">
+            <span>04</span>
+            <h4>Embarcaciones</h4>
+            <p>Cobertura para activos marítimos.</p>
+          </div>
+
+          <div class="solucion-item">
+            <span>05</span>
+            <h4>Aviación</h4>
+            <p>Protección para aeronaves corporativas.</p>
+          </div>
+
+          <div class="solucion-item">
+            <span>06</span>
+            <h4>Continuidad del negocio</h4>
+            <p>Prepara tu empresa ante imprevistos.</p>
+          </div>
+
+        </div>
+
+        <a href="#contacto" class="solucion-link">
+          Proteger mi empresa →
+        </a>
+
+      </article>
+
     </div>
-    <div class="prods oculto" id="ge">
-      <div class="prod"><span class="n">01</span><h3>Gastos médicos colectivo</h3><p>SGMC para tu equipo. Retiene talento, y cuesta menos que contratarlo individualmente.</p></div>
-      <div class="prod"><span class="n">02</span><h3>Seguro de hombre clave</h3><p>SHC. Si falta la persona de la que depende la operación, la empresa tiene con qué sostenerse mientras se reorganiza.</p></div>
-      <div class="prod"><span class="n">03</span><h3>Flotillas</h3><p>Cobertura para el parque vehicular, administrada como una sola póliza y no como veinte.</p></div>
-      <div class="prod"><span class="n">04</span><h3>Embarcaciones</h3><p>Protección para activos marítimos, con coberturas de casco, responsabilidad civil y tripulación.</p></div>
-      <div class="prod"><span class="n">05</span><h3>Aviación</h3><p>Seguros para aeronaves privadas y corporativas, ajustados al uso real de la nave.</p></div>
-      <div class="prod"><span class="n">06</span><h3>Continuidad del negocio</h3><p>La estrategia que mantiene la empresa de pie cuando el dueño falta, se enferma o quiere salir.</p></div>
-    </div>
+
   </div>
 </section>
 
@@ -214,7 +444,7 @@
   <div class="wrap">
     <p class="ojo" data-rv="">Empieza por aquí</p>
     <h2 data-rv="" dl="1" style="margin:.26em 0 0;max-width:16ch">Tu diagnóstico, <em>en tres preguntas.</em></h2>
-    <p class="lede" data-rv="" dl="2" style="margin-top:18px">No es un formulario de contacto disfrazado. Son tres preguntas y al final te decimos en qué orden conviene resolver lo tuyo —aunque no nos contrates.</p>
+    <p class="lede" data-rv="" dl="2" style="margin-top:18px">Solo necesitas responder tres preguntas para descubrir el orden ideal en que debes resolver tus finanzas, de forma transparente y a tu propio ritmo.</p>
     <div class="diag">
       <div data-rv="" dl="1">
         <div class="marca"><i class="on"></i><i></i><i></i><i></i></div>
@@ -267,7 +497,7 @@
   </div>
 </section>
 
-<!-- ═══ ESCUELA ═══ -->
+<!-- ═══ ESCUELA ═══ 
 <section class="pad crema" id="escuela">
   <div class="wrap">
     <p class="ojo" data-rv="">Escuela Plano Capital</p>
@@ -295,9 +525,9 @@
     </div>
     <p class="min" data-rv="" dl="2" style="margin-top:22px">El contenido de la escuela se carga desde tu panel. Los módulos de arriba son la estructura propuesta.</p>
   </div>
-</section>
+</section>-->
 
-<!-- ═══ ANÁLISIS ═══ -->
+<!-- ═══ ANÁLISIS ═══ 
 <section class="pad" id="analisis">
   <div class="wrap">
     <p class="ojo" data-rv="">Análisis</p>
@@ -318,7 +548,7 @@
     </div>
     <p class="min" data-rv="" dl="2" style="margin-top:22px">Los artículos se publican desde tu panel, sin depender de nosotros.</p>
   </div>
-</section>
+</section>-->
 
 <!-- ═══ ECOSISTEMA ═══ -->
 <section class="pad crema">
@@ -326,12 +556,12 @@
     <div data-rv="">
       <p class="ojo">Quiénes somos</p>
       <p class="cita" style="margin:18px 0 0">"Plano Capital es un ecosistema de expertos que exploran tus finanzas, detectan áreas de oportunidad y generan estrategias diseñadas para optimizar tu operación."</p>
-      <p class="lede" style="margin-top:20px">Cada experto trabaja en su área de especialidad, aportando a una estrategia en común. No somos un vendedor con catálogo: somos el equipo que arma el plano completo.</p>
+      <p class="lede" style="margin-top:20px">Cada experto trabaja en su área de especialidad, aportando a una estrategia en común. No te ofrecemos opciones al azar; desarrollamos el engranaje perfecto para tus finanzas.</p>
     </div>
     <div class="pilares" data-rv="" dl="1">
-      <div class="pilar"><b>01</b><span>Exploramos tus finanzas completas antes de proponer nada.</span></div>
+      <div class="pilar"><b>01</b><span>Exploramos tus finanzas completas antes de proponer algo.</span></div>
       <div class="pilar"><b>02</b><span>Detectamos las áreas de oportunidad que no se ven desde adentro.</span></div>
-      <div class="pilar"><b>03</b><span>Diseñamos una estrategia donde cada producto sostiene al siguiente.</span></div>
+      <div class="pilar"><b>03</b><span>Diseñamos una estrategia donde cada elememto sostiene al siguiente.</span></div>
       <div class="pilar"><b>04</b><span>Acompañamos la ejecución y la revisamos cuando tu vida cambia.</span></div>
     </div>
   </div>
@@ -468,7 +698,7 @@ function LienzoArco(cv,opc){
   return { pinta:pinta, medir:medir };
 }
 
-/* hero: el arco se construye una vez, al entrar */
+/* hero: el arco se construye una vez, al entrar 
 (function(){
   var cv=$("arcoHero"); if(!cv) return;
   var A=LienzoArco(cv,{dovelas:13}); if(!A) return;
@@ -484,7 +714,7 @@ function LienzoArco(cv,opc){
   if("IntersectionObserver" in window)
     new IntersectionObserver(function(e){ if(e[0].isIntersecting) arranca(); },{threshold:.2}).observe(cv);
   else arranca();
-})();
+})();*/
 
 /* ══ "Cómo construimos": carrusel horizontal deslizable ══
    Antes: sección pegajosa (position:sticky) de 574svh que avanzaba con el
@@ -783,6 +1013,126 @@ function LienzoArco(cv,opc){
     window.open("https://wa.me/525514660228?text="+encodeURIComponent(txt),"_blank","noopener");
   });
 })();
+})();
+</script>
+<script>
+  (function () {
+
+  const pista = document.getElementById("pistaLogos");
+
+  if (!pista) return;
+
+
+  /* Primera y única fila escrita en HTML */
+  const original = pista.querySelector(".fila-m");
+
+  if (!original) return;
+
+
+  /*
+   * Creamos una copia EXACTA automáticamente.
+   * No tienes que mantener dos listas de logos.
+   */
+  const copia = original.cloneNode(true);
+
+  copia.setAttribute("aria-hidden", "true");
+
+
+  /* Los alt de la copia no deben repetirse
+     para lectores de pantalla */
+  copia.querySelectorAll("img").forEach(img => {
+    img.alt = "";
+  });
+
+
+  pista.appendChild(copia);
+
+
+
+  function medirCarrusel() {
+
+    /*
+     * offsetWidth devuelve el ancho REAL:
+     *
+     * logos
+     * + gaps
+     * + padding final
+     */
+    const ancho = original.offsetWidth;
+
+
+    pista.style.setProperty(
+      "--ancho-logos",
+      ancho
+    );
+
+  }
+
+
+
+  /*
+   * Esperamos a que TODAS las imágenes
+   * tengan sus dimensiones.
+   *
+   * Esto evita precisamente el hueco
+   * que puede aparecer si calculamos
+   * antes de cargar los PNG.
+   */
+  const imagenes = original.querySelectorAll("img");
+
+
+  Promise.all(
+
+    Array.from(imagenes).map(img => {
+
+      if (img.complete) {
+        return Promise.resolve();
+      }
+
+      return new Promise(resolve => {
+
+        img.addEventListener(
+          "load",
+          resolve,
+          { once: true }
+        );
+
+        img.addEventListener(
+          "error",
+          resolve,
+          { once: true }
+        );
+
+      });
+
+    })
+
+  ).then(() => {
+
+    medirCarrusel();
+
+    pista.classList.add("lista");
+
+  });
+
+
+
+  /* recalcular en responsive */
+  let resizeTimer;
+
+  window.addEventListener("resize", () => {
+
+    clearTimeout(resizeTimer);
+
+    resizeTimer = setTimeout(() => {
+
+      medirCarrusel();
+
+    }, 150);
+
+  });
+
+
 })();
 </script>
 </body>

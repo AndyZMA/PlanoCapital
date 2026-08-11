@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog — Plano Capital</title>
+  <meta name="description" content="Ideas y análisis sobre inversión, retiro, protección y finanzas para PyMEs, explicados por Plano Capital.">
+  <meta name="theme-color" content="#1B2631">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="src/css/styles.css">
+
+  <!-- Estilos exclusivos de blog.html para no tocar styles.css -->
+  <style>
+    .blog-page { padding-top: 0; }
+
+    /* HERO EDITORIAL: compacto, asimétrico y distinto al hero del index */
+    .blog-hero {
+      min-height: 430px;
+      padding: clamp(118px, 13vw, 150px) 0 clamp(54px, 6vw, 72px);
+      overflow: hidden;
+      background: var(--papel);
+      border-bottom: 1px solid var(--linea);
+    }
+
+    .blog-hero .wrap {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(260px, .55fr);
+      gap: clamp(38px, 7vw, 100px);
+      align-items: end;
+    }
+
+    .blog-hero-main { max-width: 760px; }
+
+    .blog-hero h1 {
+      margin: .14em 0 .22em;
+      max-width: 11ch;
+      font-size: clamp(46px, 6.2vw, 82px);
+    }
+
+    .blog-hero .lede {
+      max-width: 52ch;
+      margin: 0;
+    }
+
+    .blog-hero-side {
+      border-left: 1px solid var(--linea);
+      padding-left: clamp(24px, 3vw, 40px);
+      padding-bottom: 4px;
+    }
+
+    .blog-hero-side .numero {
+      display: block;
+      font-family: var(--s);
+      font-size: clamp(54px, 7vw, 88px);
+      font-weight: 300;
+      line-height: .9;
+      color: var(--oro);
+      letter-spacing: -.04em;
+    }
+
+    .blog-hero-side p {
+      margin: 16px 0 0;
+      max-width: 27ch;
+      font-size: 13px;
+      line-height: 1.55;
+      color: var(--tinta-45);
+    }
+
+    .blog-topics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 18px;
+      margin-top: 28px;
+    }
+
+    .blog-topics span {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--tinta-45);
+    }
+
+    .blog-topics span::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--oro);
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    .blog-section { padding: clamp(66px, 8vw, 104px) 0; }
+
+    .blog-heading {
+      display: grid;
+      grid-template-columns: 1fr minmax(260px, .72fr);
+      gap: clamp(28px, 5vw, 72px);
+      align-items: end;
+    }
+
+    .blog-heading .lede { justify-self: end; }
+
+    /* GRID SIMÉTRICO: las tres cards tienen exactamente la misma geometría */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: clamp(32px, 4vw, 48px);
+    }
+
+    .blog-card,
+    .blog-card.featured {
+      min-width: 0;
+      min-height: 500px;
+      background: var(--papel);
+      border: 1px solid var(--linea);
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition:
+        transform .35s var(--e),
+        box-shadow .35s var(--e),
+        background .35s;
+    }
+
+    .blog-card:hover {
+      background: #fff;
+      transform: translateY(-4px);
+      box-shadow: 0 16px 34px rgba(27,38,49,.08);
+    }
+
+    .blog-visual,
+    .blog-card.featured .blog-visual {
+      height: 210px;
+      min-height: 210px;
+      position: relative;
+      overflow: hidden;
+      background: var(--tinta);
+      border-bottom: 1px solid var(--linea);
+    }
+
+    .blog-visual::before,
+    .blog-visual::after {
+      content: "";
+      position: absolute;
+    }
+
+    .blog-card:nth-child(1) .blog-visual::before {
+      width: 68%; aspect-ratio: 1; left: 16%; bottom: -56%;
+      border: 2px solid var(--oro);
+      border-radius: 50%;
+      box-shadow: 0 0 0 34px rgba(196,147,3,.12), 0 0 0 68px rgba(196,147,3,.06);
+    }
+
+    .blog-card:nth-child(2) .blog-visual::before {
+      width: 58%; aspect-ratio: 1; right: -3%; top: 18%;
+      border: 1px solid rgba(196,147,3,.72);
+      border-radius: 50%;
+    }
+
+    .blog-card:nth-child(2) .blog-visual::after {
+      width: 150%; height: 1px; left: -22%; top: 66%;
+      background: rgba(255,255,255,.13);
+      transform: rotate(-18deg);
+    }
+
+    .blog-card:nth-child(3) .blog-visual::before {
+      width: 62%; aspect-ratio: 1; left: 19%; top: 24%;
+      border: 1px dashed rgba(196,147,3,.65);
+      border-radius: 50%;
+    }
+
+    .blog-card:nth-child(3) .blog-visual::after {
+      width: 28%; aspect-ratio: 1; left: 36%; top: 41%;
+      background: var(--oro);
+      border-radius: 2px;
+      transform: rotate(45deg);
+    }
+
+    .blog-label {
+      position: absolute;
+      left: 18px;
+      top: 16px;
+      z-index: 2;
+      color: rgba(238,241,244,.54);
+      font-family: var(--s);
+      font-size: 10px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    .blog-copy {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 10px;
+    }
+
+    .blog-cat {
+      font-family: var(--s);
+      font-size: 11px;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--oro);
+    }
+
+    .blog-copy h2,
+    .blog-copy h3 {
+      margin: 2px 0 0;
+      font-size: clamp(21px, 1.7vw, 26px);
+      line-height: 1.08;
+    }
+
+    .blog-copy p {
+      margin: 4px 0 0;
+      font-size: 14px;
+      line-height: 1.62;
+      color: var(--tinta-70);
+    }
+
+    .blog-foot {
+      margin-top: auto;
+      padding-top: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      border-top: 1px solid var(--linea-s);
+      font-size: 12px;
+      color: var(--tinta-45);
+    }
+
+    .blog-read { color: var(--tinta); font-weight: 500; white-space: nowrap; }
+
+    .blog-bridge { padding: clamp(48px, 5vw, 68px) 0; }
+    .blog-bridge .wrap {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 38px;
+      align-items: end;
+    }
+    .blog-bridge h2 { max-width: 15ch; font-size: clamp(30px, 3.6vw, 50px); }
+
+    /* Footer más compacto solo en blog.html */
+    body > footer {
+      padding: 28px 0 22px;
+    }
+
+    body > footer .fg {
+      gap: 22px;
+      align-items: start;
+    }
+
+    body > footer .wordmark-logo {
+      width: 178px;
+    }
+
+    body > footer p {
+      font-size: 12.5px;
+      line-height: 1.5;
+      margin-bottom: 5px;
+    }
+
+    body > footer h5 {
+      margin-bottom: 8px;
+      font-size: 9.5px;
+    }
+
+    body > footer .legal {
+      margin-top: 18px;
+      padding-top: 14px;
+      font-size: 10.5px;
+      line-height: 1.6;
+    }
+
+    nav.nv a[aria-current="page"] {
+      color: var(--tinta);
+      position: relative;
+    }
+    nav.nv a[aria-current="page"]::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -8px;
+      height: 1px;
+      background: var(--oro);
+    }
+
+    @media (max-width: 960px) {
+      .blog-hero .wrap { grid-template-columns: 1fr .48fr; }
+      .blog-heading { grid-template-columns: 1fr; }
+      .blog-heading .lede { justify-self: start; }
+      .blog-grid { grid-template-columns: 1fr 1fr; }
+      .blog-card:nth-child(3) { grid-column: 1 / -1; }
+      .blog-card:nth-child(3) { min-height: 440px; }
+    }
+
+    @media (max-width: 700px) {
+      .blog-hero {
+        min-height: 0;
+        padding: 108px 0 48px;
+      }
+      .blog-hero .wrap { grid-template-columns: 1fr; gap: 30px; }
+      .blog-hero h1 { font-size: clamp(42px, 13vw, 60px); }
+      .blog-hero-side {
+        border-left: 0;
+        border-top: 1px solid var(--linea);
+        padding: 22px 0 0;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 20px;
+        align-items: end;
+      }
+      .blog-hero-side .numero { font-size: 54px; }
+      .blog-hero-side p { margin: 0; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .blog-card,
+      .blog-card.featured,
+      .blog-card:nth-child(3) { min-height: 0; grid-column: auto; }
+      .blog-visual,
+      .blog-card.featured .blog-visual { height: 190px; min-height: 190px; }
+      .blog-bridge .wrap { grid-template-columns: 1fr; align-items: start; }
+      body > footer { padding: 24px 0 18px; }
+      nav.nv a[aria-current="page"]::after { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<a class="flot on" id="flot" href="https://wa.me/525514660228?text=Hola%2C%20quiero%20una%20asesor%C3%ADa%20con%20Plano%20Capital." target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.7 15l-1.3 4.7 4.9-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.2 1.2-1.7 1.2-.5 0-2.1-.2-4.4-2.2-2.3-2-2.9-3.6-3-4.1-.1-.5.4-1.5 1-1.7.2-.1.5 0 .7.3l.9 1.5c.1.2.1.4 0 .6l-.4.6c-.1.2-.1.4 0 .5.5.8 1.4 1.7 2.3 2.2.2.1.4.1.5-.1l.5-.6c.2-.2.4-.2.6-.1l1.6.8c.3.2.5.4.4.7z"></path></svg>
+</a>
+
+<header id="hd" class="fija">
+  <div class="bar">
+    <a href="index.html#inicio" class="wordmark" aria-label="Plano Capital — Inicio">
+      <img src="src/img/icons/PlanoNavCapital.png" alt="Plano Capital" class="wordmark-logo">
+    </a>
+
+    <nav class="nv" id="nv">
+      <a href="index.html#costo">El costo de esperar</a>
+      <a href="index.html#arco">Cómo construimos</a>
+      <a href="index.html#soluciones">Soluciones</a>
+      <a href="index.html#escuela">Escuela</a>
+      <a href="blog.html" aria-current="page">Análisis</a>
+    </nav>
+
+    <button class="mtg" id="mtg" aria-label="Menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    <a class="btn sm" href="index.html#diagnostico">Diagnóstico gratis</a>
+  </div>
+</header>
+
+<main class="blog-page">
+  <section class="blog-hero">
+    <div class="wrap">
+      <div class="blog-hero-main">
+        <p class="ojo vis" data-rv>Cuaderno Plano Capital</p>
+        <h1 class="vis" data-rv dl="1">Ideas para leer mejor <em>tu dinero.</em></h1>
+        <p class="lede vis" data-rv dl="2">Un espacio editorial para entender inversión, retiro, protección y empresa con contexto antes que con ruido.</p>
+        <div class="blog-topics vis" data-rv dl="3">
+          <span>Inversión</span>
+          <span>Retiro</span>
+          <span>Protección</span>
+          <span>PyMEs</span>
+        </div>
+      </div>
+      <aside class="blog-hero-side vis" data-rv dl="2" aria-label="Edición actual">
+        <span class="numero">03</span>
+        <p>Análisis iniciales para construir criterio antes de elegir productos, plazos o coberturas.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="blog-section" id="articulos">
+    <div class="wrap">
+      <div class="blog-heading">
+        <div>
+          <p class="ojo" data-rv>Últimos análisis</p>
+          <h2 data-rv dl="1" style="margin:.22em 0 0;max-width:13ch">Lo importante, <em>explicado.</em></h2>
+        </div>
+        <p class="lede" data-rv dl="2">Tres puntos de partida para entender decisiones de inversión, retiro y protección patrimonial sin perderse entre tecnicismos.</p>
+      </div>
+
+      <div class="blog-grid">
+        <a class="blog-card featured" href="#" data-rv>
+          <div class="blog-visual"><span class="blog-label">Plano 01 / Inversión</span></div>
+          <div class="blog-copy">
+            <span class="blog-cat">Inversión · Estrategia</span>
+            <h2>El costo silencioso de dejar todo tu dinero disponible.</h2>
+            <p>Liquidez y seguridad no son lo mismo. Qué ocurre cuando el dinero que no necesitas hoy tampoco tiene una función para mañana.</p>
+            <div class="blog-foot"><span>Lectura de 6 min</span><span class="blog-read">Leer análisis →</span></div>
+          </div>
+        </a>
+
+        <a class="blog-card" href="#" data-rv dl="1">
+          <div class="blog-visual"><span class="blog-label">Plano 02 / Retiro</span></div>
+          <div class="blog-copy">
+            <span class="blog-cat">Retiro · Largo plazo</span>
+            <h3>Tu retiro no empieza a los 60.</h3>
+            <p>Empieza cuando decides cuánto de tu ingreso actual pertenece a tu yo del futuro y qué vehículo puede ayudarte a construirlo.</p>
+            <div class="blog-foot"><span>Lectura de 7 min</span><span class="blog-read">Leer análisis →</span></div>
+          </div>
+        </a>
+
+        <a class="blog-card" href="#" data-rv dl="2">
+          <div class="blog-visual"><span class="blog-label">Plano 03 / PyMEs</span></div>
+          <div class="blog-copy">
+            <span class="blog-cat">PyMEs · Protección</span>
+            <h3>Una empresa rentable también puede ser frágil.</h3>
+            <p>Qué riesgos conviene mapear antes de crecer, y por qué proteger a las personas clave también protege la continuidad del negocio.</p>
+            <div class="blog-foot"><span>Lectura de 5 min</span><span class="blog-read">Leer análisis →</span></div>
+          </div>
+        </a>
+      </div>
+
+      <p class="min" style="margin-top:22px" data-rv dl="2">Contenido con fines educativos e informativos. No constituye una recomendación individual de inversión, seguro o producto financiero.</p>
+    </div>
+  </section>
+
+  <section class="noche blog-bridge">
+    <div class="wrap">
+      <div>
+        <p class="ojo" data-rv>Del análisis a tu estrategia</p>
+        <h2 data-rv dl="1" style="margin:.22em 0 0">Entender ayuda. <em>Construir cambia las cosas.</em></h2>
+      </div>
+      <a class="btn oro" href="index.html#diagnostico" data-rv dl="2">Haz tu diagnóstico</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fg">
+      <div>
+        <a href="index.html#inicio" class="wordmark" aria-label="Plano Capital">
+          <img src="src/img/icons/PlanoNavCapital.png" alt="Plano Capital" class="wordmark-logo">
+        </a>
+        <p style="margin-top:16px;max-width:32ch">Finanzas para Mexicanos.<br>Construimos tu futuro.</p>
+      </div>
+      <div>
+        <h5>Soluciones</h5>
+        <p><a href="index.html#soluciones">Para personas</a></p>
+        <p><a href="index.html#soluciones">Para PyMEs</a></p>
+        <p><a href="index.html#escuela">Escuela</a></p>
+        <p><a href="blog.html">Análisis</a></p>
+      </div>
+      <div>
+        <h5>Contacto</h5>
+        <p><a href="https://wa.me/525514660228" target="_blank" rel="noopener">(55) 1466 0228</a></p>
+        <p><a href="mailto:patrimoniobrunogarcia@gmail.com">patrimoniobrunogarcia@gmail.com</a></p>
+        <p style="margin-top:10px">Lago Alberto 319, Colonia Granada,<br>Miguel Hidalgo, CDMX</p>
+      </div>
+    </div>
+    <div class="legal">Plano Capital es una agencia de servicios financieros. Los contenidos de esta página tienen fines educativos e informativos; no constituyen una recomendación de inversión ni garantizan rendimientos.</div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var h = document.getElementById("hd");
+  var f = document.getElementById("flot");
+  var m = document.getElementById("mtg");
+  var ticking = false;
+
+  function updateHeader(){
+    var y = window.scrollY || 0;
+    h.classList.toggle("fija", y > 28);
+    if(f) f.classList.toggle("on", y > 360);
+    ticking = false;
+  }
+
+  window.addEventListener("scroll", function(){
+    if(!ticking){ ticking = true; requestAnimationFrame(updateHeader); }
+  }, {passive:true});
+  updateHeader();
+
+  if(m){
+    m.addEventListener("click", function(){
+      var open = h.classList.toggle("abre");
+      m.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  }
+
+  document.querySelectorAll("nav.nv a").forEach(function(a){
+    a.addEventListener("click", function(){
+      h.classList.remove("abre");
+      if(m) m.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  var targets = Array.prototype.slice.call(document.querySelectorAll("[data-rv]"));
+  if(reduce){
+    targets.forEach(function(el){ el.classList.add("vis"); });
+  } else {
+    function reveal(){
+      var vh = window.innerHeight || 0;
+      for(var i = targets.length - 1; i >= 0; i--){
+        var r = targets[i].getBoundingClientRect();
+        if(r.top < vh * .92 && r.bottom > -80){
+          targets[i].classList.add("vis");
+          targets.splice(i, 1);
+        }
+      }
+    }
+    window.addEventListener("scroll", reveal, {passive:true});
+    window.addEventListener("resize", reveal);
+    window.addEventListener("load", reveal);
+    reveal();
+  }
+})();
+</script>
+</body>
+</html>

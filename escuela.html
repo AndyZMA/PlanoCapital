@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Escuela Plano Capital — Finanzas claras, sin vueltas</title>
+<meta name="description" content="Aprende finanzas personales, inversión, retiro, protección y PyMEs con lecciones cortas y claras de Plano Capital.">
+<meta name="theme-color" content="#1B2631">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/css/styles.css">
+
+<style>
+/* ═══════════════════════════════════════
+   ESCUELA — estilos específicos de página
+   ═══════════════════════════════════════ */
+
+body.escuela-page {
+  background: var(--papel);
+}
+
+/* Hero de escuela: más editorial, compacto y con mayor densidad visual */
+.esc-hero {
+  position: relative;
+  isolation: isolate;
+  padding: clamp(112px, 10vw, 142px) 0 clamp(54px, 5.5vw, 76px);
+  background:
+    radial-gradient(circle at 86% 28%, rgba(196,147,3,.10), transparent 26%),
+    linear-gradient(115deg, #f4f1ea 0%, #fbfcfc 58%, #f7f5ef 100%);
+  border-bottom: 1px solid var(--linea);
+  overflow: hidden;
+}
+
+/* geometría técnica muy sutil para no dejar vacío el lado derecho */
+.esc-hero::before {
+  content: "";
+  position: absolute;
+  width: clamp(320px, 34vw, 560px);
+  aspect-ratio: 1;
+  right: -8%;
+  top: 48%;
+  transform: translateY(-50%);
+  border: 1px solid rgba(196,147,3,.16);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 42px rgba(196,147,3,.035),
+    0 0 0 84px rgba(196,147,3,.025);
+  z-index: -1;
+}
+
+.esc-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 58%;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent 9%,
+    rgba(27,38,49,.08) 24%,
+    rgba(27,38,49,.08) 76%,
+    transparent 91%
+  );
+  z-index: -1;
+}
+
+.esc-hero .wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(360px, .95fr);
+  gap: clamp(42px, 6vw, 90px);
+  align-items: center;
+}
+
+.esc-hero h1 {
+  font-size: clamp(44px, 5.25vw, 72px);
+  max-width: 10.5ch;
+  margin-top: .14em;
+  line-height: .99;
+}
+
+.esc-hero .lede {
+  max-width: 48ch;
+  margin-top: 22px;
+  font-size: clamp(16px, 1.18vw, 19px);
+}
+
+.esc-hero-side {
+  position: relative;
+  border: 1px solid var(--linea);
+  background: rgba(251,252,252,.62);
+  backdrop-filter: blur(8px);
+  padding: clamp(24px, 2.8vw, 34px);
+  display: grid;
+  gap: 0;
+  box-shadow: 0 18px 55px rgba(27,38,49,.045);
+}
+
+.esc-hero-side::before {
+  content: "RUTA 01—06";
+  position: absolute;
+  top: -10px;
+  right: 18px;
+  padding: 0 8px;
+  background: #f8f6f0;
+  color: var(--oro);
+  font-family: var(--a);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .22em;
+}
+
+.esc-stat {
+  min-height: 94px;
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 18px;
+  align-items: center;
+  padding: 17px 0;
+  border-bottom: 1px solid var(--linea-s);
+}
+
+.esc-stat:last-child {
+  border-bottom: 0;
+}
+
+.esc-stat strong {
+  font-family: var(--s);
+  font-size: clamp(34px, 3vw, 48px);
+  font-weight: 300;
+  line-height: .9;
+  color: var(--oro);
+}
+
+.esc-stat span {
+  max-width: 30ch;
+  color: var(--tinta-70);
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+/* Intro / ruta: bloque con más intención y menos aire muerto */
+.esc-intro {
+  position: relative;
+  padding: clamp(64px, 6vw, 88px) 0;
+  background: var(--papel);
+  border-bottom: 1px solid var(--linea-s);
+}
+
+.esc-intro::before {
+  content: "01 / FUNDAMENTOS";
+  position: absolute;
+  left: max(var(--gut), calc((100vw - var(--max)) / 2 + var(--gut)));
+  bottom: 18px;
+  font-family: var(--a);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .22em;
+  color: var(--tinta-45);
+}
+
+.esc-intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, .85fr) minmax(460px, 1.15fr);
+  gap: clamp(48px, 7vw, 104px);
+  align-items: center;
+}
+
+.esc-intro-copy {
+  position: relative;
+  padding-left: 20px;
+}
+
+.esc-intro-copy::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 2px;
+  height: 58px;
+  background: var(--oro);
+}
+
+.esc-intro-copy h2 {
+  max-width: 11ch;
+  margin-top: .2em;
+  font-size: clamp(38px, 4vw, 58px);
+}
+
+.esc-intro-copy .lede {
+  margin-top: 20px;
+  max-width: 39ch;
+  font-size: clamp(16px, 1.12vw, 18px);
+}
+
+.esc-path {
+  counter-reset: ruta;
+  display: grid;
+  gap: 0;
+  background: transparent;
+  border: 1px solid var(--linea);
+  box-shadow: 0 16px 46px rgba(27,38,49,.035);
+}
+
+.esc-path-item {
+  counter-increment: ruta;
+  position: relative;
+  overflow: hidden;
+  background: rgba(251,252,252,.78);
+  padding: 22px 24px;
+  display: grid;
+  grid-template-columns: 58px 1fr;
+  gap: 18px;
+  align-items: center;
+  min-height: 88px;
+  border-bottom: 1px solid var(--linea);
+  transition:
+    background .28s ease,
+    padding-left .28s var(--e);
+}
+
+.esc-path-item:last-child {
+  border-bottom: 0;
+}
+
+.esc-path-item::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: var(--oro);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform .28s var(--e);
+}
+
+.esc-path-item:hover {
+  background: #fff;
+  padding-left: 30px;
+}
+
+.esc-path-item:hover::after {
+  transform: scaleY(1);
+}
+
+.esc-path-item b {
+  font-family: var(--s);
+  font-size: 13px;
+  letter-spacing: .18em;
+  color: var(--oro);
+  font-weight: 400;
+}
+
+.esc-path-item span {
+  max-width: 42ch;
+  color: var(--tinta-70);
+  font-size: 14.5px;
+  line-height: 1.55;
+}
+
+/* Módulos */
+.esc-modulos {
+  padding: clamp(36px, 5vw, 72px) 0 clamp(84px, 9vw, 132px);
+}
+
+.esc-modulos-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: clamp(28px, 3.4vw, 44px);
+}
+
+.esc-modulos-head h2 {
+  margin-top: .22em;
+}
+
+.esc-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.esc-filter button {
+  border: 1px solid var(--linea);
+  background: transparent;
+  border-radius: 999px;
+  padding: 8px 13px;
+  font-size: 12.5px;
+  cursor: pointer;
+  color: var(--tinta-70);
+  transition: .25s ease;
+}
+
+.esc-filter button:hover,
+.esc-filter button.on {
+  border-color: var(--oro);
+  color: var(--tinta);
+  background: var(--oro-t);
+}
+
+.esc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.esc-card {
+  background: var(--papel);
+  border: 1px solid var(--linea);
+  border-radius: 3px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  text-decoration: none;
+  transition:
+    transform .35s var(--e),
+    box-shadow .35s var(--e),
+    border-color .35s;
+}
+
+.esc-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px rgba(27,38,49,.10);
+  border-color: rgba(196,147,3,.35);
+}
+
+.esc-card[hidden] {
+  display: none;
+}
+
+.esc-card-visual {
+  aspect-ratio: 16/9;
+  position: relative;
+  background: var(--tinta);
+  overflow: hidden;
+}
+
+.esc-card-visual canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.esc-card-badge {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  z-index: 2;
+  font-family: var(--s);
+  font-size: 11px;
+  letter-spacing: .2em;
+  color: var(--oro);
+}
+
+.esc-card-body {
+  padding: 20px 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  flex: 1;
+}
+
+.esc-card h3 {
+  font-size: clamp(19px, 1.7vw, 24px);
+}
+
+.esc-card p {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--tinta-70);
+}
+
+.esc-card-meta {
+  margin-top: auto;
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--tinta-45);
+  font-size: 12.5px;
+}
+
+.esc-card-link {
+  margin-top: 4px;
+  font-size: 13px;
+  color: var(--petroleo);
+}
+
+/* Franja CTA */
+.esc-cta {
+  padding: clamp(56px, 7vw, 86px) 0;
+  background: var(--tinta);
+  color: #eef1f4;
+}
+
+.esc-cta .wrap {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 32px;
+  align-items: center;
+}
+
+.esc-cta h2 {
+  color: #fff;
+  max-width: 15ch;
+}
+
+.esc-cta .lede {
+  color: rgba(238,241,244,.66);
+  margin-top: 14px;
+}
+
+/* Footer más compacto para página interna */
+.escuela-page footer {
+  padding: 30px 0 34px;
+}
+
+.escuela-page .legal {
+  margin-top: 22px;
+  padding-top: 16px;
+}
+
+/* Activo nav */
+nav.nv a.activo {
+  color: var(--tinta);
+  position: relative;
+}
+
+nav.nv a.activo::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -9px;
+  height: 1px;
+  background: var(--oro);
+}
+
+/* Responsive */
+@media (max-width: 960px) {
+  .esc-hero::after {
+    display: none;
+  }
+
+  .esc-hero .wrap,
+  .esc-intro-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .esc-hero .wrap {
+    gap: 34px;
+  }
+
+  .esc-hero h1 {
+    max-width: 12ch;
+  }
+
+  .esc-hero-side {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0;
+  }
+
+  .esc-stat {
+    min-height: 128px;
+    grid-template-columns: 1fr;
+    gap: 9px;
+    padding: 22px;
+    border-bottom: 0;
+    border-right: 1px solid var(--linea-s);
+    align-content: center;
+  }
+
+  .esc-stat:last-child {
+    border-right: 0;
+  }
+
+  .esc-intro-grid {
+    gap: 34px;
+  }
+
+  .esc-intro-copy {
+    max-width: 600px;
+  }
+
+  .esc-path {
+    max-width: none;
+  }
+
+  .esc-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .esc-cta .wrap {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .esc-hero {
+    padding-top: 98px;
+    padding-bottom: 44px;
+  }
+
+  .esc-hero::before {
+    width: 360px;
+    right: -48%;
+    top: 28%;
+    opacity: .7;
+  }
+
+  .esc-hero h1 {
+    font-size: clamp(42px, 13vw, 58px);
+    max-width: 9.5ch;
+  }
+
+  .esc-hero-side {
+    grid-template-columns: 1fr;
+  }
+
+  .esc-stat {
+    min-height: auto;
+    grid-template-columns: 58px 1fr;
+    padding: 17px 18px;
+    border-right: 0;
+    border-bottom: 1px solid var(--linea-s);
+  }
+
+  .esc-stat:last-child {
+    border-bottom: 0;
+  }
+
+  .esc-intro {
+    padding: 52px 0 62px;
+  }
+
+  .esc-intro::before {
+    display: none;
+  }
+
+  .esc-intro-copy {
+    padding-left: 14px;
+  }
+
+  .esc-intro-copy h2 {
+    font-size: clamp(36px, 11vw, 50px);
+  }
+
+  .esc-path-item {
+    grid-template-columns: 44px 1fr;
+    min-height: 82px;
+    padding: 18px;
+  }
+
+  .esc-path-item:hover {
+    padding-left: 22px;
+  }
+
+  .esc-modulos-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .esc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav.nv a.activo::after {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .esc-stat {
+    grid-template-columns: 46px 1fr;
+  }
+}
+</style>
+</head>
+
+<body class="escuela-page">
+
+<a class="flot on" id="flot"
+   href="https://wa.me/525514660228?text=Hola%2C%20quiero%20una%20asesor%C3%ADa%20con%20Plano%20Capital."
+   target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 2a10 10 0 0 0-8.7 15l-1.3 4.7 4.9-1.3A10 10 0 1 0 12 2zm5.3 14.2c-.2.6-1.2 1.2-1.7 1.2-.5 0-2.1-.2-4.4-2.2-2.3-2-2.9-3.6-3-4.1-.1-.5.4-1.5 1-1.7.2-.1.5 0 .7.3l.9 1.5c.1.2.1.4 0 .6l-.4.6c-.1.2-.1.4 0 .5.5.8 1.4 1.7 2.3 2.2.2.1.4.1.5-.1l.5-.6c.2-.2.4-.2.6-.1l1.6.8c.3.2.5.4.4.7z"></path>
+  </svg>
+</a>
+
+<header id="hd" class="fija">
+  <div class="bar">
+    <a href="index.html#inicio" class="wordmark" aria-label="Plano Capital">
+      <img
+        src="src/img/icons/PlanoNavCapital.png"
+        alt="Plano Capital"
+        class="wordmark-logo"
+      >
+    </a>
+
+    <nav class="nv" id="nv">
+      <a href="index.html#costo">El costo de esperar</a>
+      <a href="index.html#arco">Cómo construimos</a>
+      <a href="index.html#soluciones">Soluciones</a>
+      <a href="escuela.html" class="activo" aria-current="page">Escuela</a>
+      <a href="blog.html">Análisis</a>
+    </nav>
+
+    <button class="mtg" id="mtg" aria-label="Menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a class="btn sm" href="index.html#diagnostico">Diagnóstico gratis</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ═══ HERO ESCUELA ═══ -->
+  <section class="esc-hero">
+    <div class="wrap">
+      <div>
+        <p class="ojo vis" data-rv>Escuela Plano Capital</p>
+        <h1 class="vis" data-rv dl="1">Entender tu dinero <em>también es patrimonio.</em></h1>
+        <p class="lede vis" data-rv dl="2">
+          Lecciones cortas, en español claro y sin fórmulas innecesarias.
+          Aprende qué mirar, qué preguntar y cómo tomar decisiones financieras con más contexto.
+        </p>
+      </div>
+
+      <div class="esc-hero-side vis" data-rv dl="2">
+        <div class="esc-stat">
+          <strong>06</strong>
+          <span>módulos para construir una base financiera más sólida.</span>
+        </div>
+        <div class="esc-stat">
+          <strong>27</strong>
+          <span>lecciones breves pensadas para avanzar sin saturarte.</span>
+        </div>
+        <div class="esc-stat">
+          <strong>0</strong>
+          <span>costo. La escuela está pensada como contenido educativo abierto.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ INTRO ═══ -->
+  <section class="esc-intro">
+    <div class="wrap esc-intro-grid">
+      <div class="esc-intro-copy" data-rv>
+        <p class="ojo">Antes de elegir productos</p>
+        <h2>Primero construye <em>criterio.</em></h2>
+        <p class="lede">
+          No necesitas convertirte en especialista. Necesitas entender las piezas suficientes
+          para distinguir una buena decisión de una decisión apresurada.
+        </p>
+      </div>
+
+      <div class="esc-path" data-rv dl="1">
+        <div class="esc-path-item">
+          <b>01</b>
+          <span>Entiende cómo funciona el tiempo, el interés y el crecimiento del dinero.</span>
+        </div>
+        <div class="esc-path-item">
+          <b>02</b>
+          <span>Protege lo que ya construiste antes de aumentar el riesgo.</span>
+        </div>
+        <div class="esc-path-item">
+          <b>03</b>
+          <span>Conecta inversión, retiro, fiscalidad y objetivos en una sola estrategia.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ MÓDULOS ═══ -->
+  <section class="esc-modulos" id="modulos">
+    <div class="wrap">
+
+      <div class="esc-modulos-head">
+        <div>
+          <p class="ojo" data-rv>Ruta de aprendizaje</p>
+          <h2 data-rv dl="1">Explora los <em>módulos.</em></h2>
+        </div>
+
+        <div class="esc-filter" aria-label="Filtrar módulos" data-rv dl="2">
+          <button class="on" data-filter="all">Todos</button>
+          <button data-filter="fundamentos">Fundamentos</button>
+          <button data-filter="proteccion">Protección</button>
+          <button data-filter="patrimonio">Patrimonio</button>
+          <button data-filter="empresa">PyMEs</button>
+        </div>
+      </div>
+
+      <div class="esc-grid">
+
+        <a class="esc-card" href="#" data-cat="fundamentos" data-rv>
+          <div class="esc-card-visual">
+            <canvas data-sem="interes" aria-hidden="true"></canvas>
+            <span class="esc-card-badge">MÓDULO 01</span>
+          </div>
+          <div class="esc-card-body">
+            <h3>Interés compuesto</h3>
+            <p>Por qué el tiempo pesa más que el monto, y por qué empezar tarde cuesta tanto.</p>
+            <div class="esc-card-meta">
+              <span>4 lecciones</span>
+              <span>18 min</span>
+            </div>
+            <span class="esc-card-link">Ver módulo →</span>
+          </div>
+        </a>
+
+        <a class="esc-card" href="#" data-cat="proteccion" data-rv dl="1">
+          <div class="esc-card-visual">
+            <canvas data-sem="riesgo" aria-hidden="true"></canvas>
+            <span class="esc-card-badge">MÓDULO 02</span>
+          </div>
+          <div class="esc-card-body">
+            <h3>Proteger antes de crecer</h3>
+            <p>Qué asegurar primero, cuánta cobertura es suficiente y qué letras chiquitas sí importan.</p>
+            <div class="esc-card-meta">
+              <span>5 lecciones</span>
+              <span>24 min</span>
+            </div>
+            <span class="esc-card-link">Ver módulo →</span>
+          </div>
+        </a>
+
+        <a class="esc-card" href="#" data-cat="patrimonio" data-rv dl="2">
+          <div class="esc-card-visual">
+            <canvas data-sem="retiro" aria-hidden="true"></canvas>
+            <span class="esc-card-badge">MÓDULO 03</span>
+          </div>
+          <div class="esc-card-body">
+            <h3>Retiro sin sustos</h3>
+            <p>Afore, PPR y ahorro voluntario: qué hace cada uno y cómo se complementan.</p>
+            <div class="esc-card-meta">
+              <span>4 lecciones</span>
+              <span>20 min</span>
+            </div>
+            <span class="esc-card-link">Ver módulo →</span>
+          </div>
+        </a>
+
+        <a class="esc-card" href="#" data-cat="empresa" data-rv>
+          <div class="esc-card-visual">
+            <canvas data-sem="pyme" aria-hidden="true"></canvas>
+            <span class="esc-card-badge">MÓDULO 04</span>
+          </div>
+          <div class="esc-card-body">
+            <h3>Finanzas de una PyME</h3>
+            <p>Separar la bolsa personal de la empresa y reconocer qué riesgos sí pueden tumbar un negocio sano.</p>
+            <div class="esc-card-meta">
+              <span>6 lecciones</span>
+              <span>32 min</span>
+            </div>
+            <span class="esc-card-link">Ver módulo →</span>
+          </div>
+        </a>
+
+        <a class="esc-card" href="#" data-cat="patrimonio" data-rv dl="1">
+          <div class="esc-card-visual">
+            <canvas data-sem="fiscal" aria-hidden="true"></canvas>
+            <span class="esc-card-badge">MÓDULO 05</span>
+          </div>
+          <div class="esc-card-body">
+            <h3>El lado fiscal</h3>
+            <p>Deducciones que sí existen, cómo funciona el beneficio del PPR y qué conviene documentar.</p>
+            <div class="esc-card-meta">
+              <span>3 lecciones</span>
+              <span>15 min</span>
+            </div>
+            <span class="esc-card-link">Ver módulo →</span>
+          </div>
+        </a>
+
+        <a class="esc-card" href="#" data-cat="fundamentos" data-rv dl="2">
+          <div class="esc-card-visual">
+            <canvas data-sem="inversion" aria-hidden="true"></canvas>
+            <span class="esc-card-badge">MÓDULO 06</span>
+          </div>
+          <div class="esc-card-body">
+            <h3>Instrumentos, en simple</h3>
+            <p>Cetes, fondos, seguros dotales y unit link: qué es cada uno, sin palabras raras.</p>
+            <div class="esc-card-meta">
+              <span>5 lecciones</span>
+              <span>26 min</span>
+            </div>
+            <span class="esc-card-link">Ver módulo →</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA ═══ -->
+  <section class="esc-cta">
+    <div class="wrap">
+      <div>
+        <p class="ojo">Del conocimiento a la estrategia</p>
+        <h2 style="margin-top:.2em">Aprender ayuda. <em>Conectarlo todo</em> cambia el resultado.</h2>
+        <p class="lede">
+          Cuando quieras pasar de entender conceptos a ordenar tu situación financiera,
+          empieza por el diagnóstico.
+        </p>
+      </div>
+
+      <a class="btn oro" href="index.html#diagnostico">Hacer diagnóstico</a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="fg">
+      <div>
+        <a href="index.html#inicio" class="wordmark" aria-label="Plano Capital">
+          <span></span><b>Plano Capital</b>
+        </a>
+        <p style="margin-top:12px;max-width:32ch">Finanzas para Mexicanos.<br>Construimos tu futuro.</p>
+      </div>
+
+      <div>
+        <h5>Explora</h5>
+        <p><a href="index.html#soluciones">Soluciones</a></p>
+        <p><a href="escuela.html">Escuela</a></p>
+        <p><a href="blog.html">Análisis</a></p>
+      </div>
+
+      <div>
+        <h5>Contacto</h5>
+        <p><a href="https://wa.me/525514660228" target="_blank" rel="noopener">(55) 1466 0228</a></p>
+        <p><a href="mailto:patrimoniobrunogarcia@gmail.com">patrimoniobrunogarcia@gmail.com</a></p>
+      </div>
+    </div>
+
+    <div class="legal">
+      Plano Capital es una agencia de servicios financieros. El contenido de la escuela tiene fines educativos e informativos; no constituye una recomendación de inversión ni garantiza rendimientos.
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var ORO = "#C49303";
+
+  function $(id){ return document.getElementById(id); }
+
+  /* ══ sigilos / visuales de módulos ══ */
+  function pintaCanvas(cv){
+    var ctx = cv.getContext("2d");
+    if(!ctx) return;
+
+    var W = cv.clientWidth || 400;
+    var H = cv.clientHeight || 225;
+    if(!W || !H) return;
+
+    var DPR = Math.min(window.devicePixelRatio || 1, 2);
+    cv.width = Math.round(W * DPR);
+    cv.height = Math.round(H * DPR);
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+
+    var s = cv.getAttribute("data-sem") || "modulo";
+    var h = 0;
+    for(var i=0;i<s.length;i++) h=(h*31+s.charCodeAt(i))>>>0;
+
+    function r(k){
+      var x=Math.sin(h+k*97.13)*43758.5453;
+      return x-Math.floor(x);
+    }
+
+    ctx.fillStyle="#1B2631";
+    ctx.fillRect(0,0,W,H);
+
+    /* retícula muy sutil */
+    ctx.strokeStyle="rgba(255,255,255,.035)";
+    ctx.lineWidth=1;
+    for(var gx=0;gx<W;gx+=28){
+      ctx.beginPath(); ctx.moveTo(gx,0); ctx.lineTo(gx,H); ctx.stroke();
+    }
+    for(var gy=0;gy<H;gy+=28){
+      ctx.beginPath(); ctx.moveTo(0,gy); ctx.lineTo(W,gy); ctx.stroke();
+    }
+
+    var n=3+Math.floor(r(1)*4);
+    var cx=W*(0.24+r(2)*0.5);
+    var base=H*1.02;
+
+    for(var k=0;k<n;k++){
+      var R=H*(0.34+k*(0.13+r(k+3)*0.07));
+      ctx.beginPath();
+      ctx.arc(cx,base,R,Math.PI,0);
+      ctx.strokeStyle=k===n-1 ? ORO : "rgba(196,147,3,"+(0.16+k*0.06).toFixed(2)+")";
+      ctx.lineWidth=k===n-1?2:1;
+      ctx.stroke();
+    }
+
+    var d=7+Math.floor(r(9)*6);
+    for(var j=0;j<d;j++){
+      var a1=Math.PI+(j/d)*Math.PI+0.012;
+      var a2=Math.PI+((j+1)/d)*Math.PI-0.012;
+      var Ro=H*0.34;
+      var Ri=Ro-H*0.075;
+
+      if(r(j+20)>0.45) continue;
+
+      ctx.beginPath();
+      ctx.arc(cx,base,Ro,a1,a2);
+      ctx.arc(cx,base,Ri,a2,a1,true);
+      ctx.closePath();
+      ctx.fillStyle="rgba(196,147,3,.5)";
+      ctx.fill();
+    }
+  }
+
+  var canvases = Array.prototype.slice.call(document.querySelectorAll("canvas[data-sem]"));
+  canvases.forEach(pintaCanvas);
+
+  var resizeTimer;
+  window.addEventListener("resize", function(){
+    clearTimeout(resizeTimer);
+    resizeTimer=setTimeout(function(){
+      canvases.forEach(pintaCanvas);
+    },180);
+  });
+
+  /* ══ filtros de módulos ══ */
+  var filtros = document.querySelectorAll(".esc-filter button");
+  var cards = document.querySelectorAll(".esc-card");
+
+  filtros.forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var f = btn.getAttribute("data-filter");
+
+      filtros.forEach(function(b){
+        b.classList.toggle("on", b===btn);
+      });
+
+      cards.forEach(function(card){
+        card.hidden = !(f==="all" || card.getAttribute("data-cat")===f);
+      });
+    });
+  });
+
+  /* ══ reveals ══ */
+  (function(){
+    var tg=Array.prototype.slice.call(document.querySelectorAll("[data-rv]"));
+
+    if(reduce){
+      tg.forEach(function(e){ e.classList.add("vis"); });
+      return;
+    }
+
+    var pend=false;
+
+    function revisa(){
+      var vh=window.innerHeight||0;
+
+      for(var i=tg.length-1;i>=0;i--){
+        var r=tg[i].getBoundingClientRect();
+
+        if(r.top<vh*0.92 && r.bottom>-80){
+          tg[i].classList.add("vis");
+          tg.splice(i,1);
+        }
+      }
+
+      pend=false;
+    }
+
+    function pedir(){
+      if(!pend){
+        pend=true;
+        requestAnimationFrame(revisa);
+      }
+    }
+
+    window.addEventListener("scroll",pedir,{passive:true});
+    window.addEventListener("resize",pedir);
+    window.addEventListener("load",pedir);
+
+    revisa();
+    setTimeout(revisa,240);
+  })();
+
+  /* ══ navbar ══ */
+  (function(){
+    var h=$("hd");
+    var f=$("flot");
+    var tk=false;
+
+    function upd(){
+      var y=window.scrollY||0;
+      h.classList.toggle("fija",y>28);
+      if(f) f.classList.toggle("on",y>700);
+      tk=false;
+    }
+
+    window.addEventListener("scroll",function(){
+      if(!tk){
+        tk=true;
+        requestAnimationFrame(upd);
+      }
+    },{passive:true});
+
+    upd();
+
+    var m=$("mtg");
+    if(m){
+      m.addEventListener("click",function(){
+        var o=h.classList.toggle("abre");
+        m.setAttribute("aria-expanded",o?"true":"false");
+      });
+    }
+
+    document.querySelectorAll("nav.nv a").forEach(function(a){
+      a.addEventListener("click",function(){
+        h.classList.remove("abre");
+        if(m) m.setAttribute("aria-expanded","false");
+      });
+    });
+  })();
+
+})();
+</script>
+
+</body>
+</html>

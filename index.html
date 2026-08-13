@@ -88,7 +88,7 @@
         <span class="sello-num">01</span>
 
         <div>
-          <b>Entender antes de vender.</b>
+          <b>Entender antes de accionar.</b>
 
           <span>
             Primero analizamos tu situación.
@@ -196,9 +196,84 @@
     <p class="ojo vis" data-rv="">El problema que atendemos</p>
     <h2 data-rv="" dl="1" style="margin:.26em 0 0;max-width:18ch" class="vis">Nadie nos enseñó a manejar el dinero. <em>Y se nota.</em></h2>
     <p class="lede vis" data-rv="" dl="2" style="margin-top:20px;max-width:56ch">El problema principal que atiende Plano Capital no es la falta de dinero: es la falta de guía. La mayoría de las decisiones financieras en México se toman sin información, sin comparar y sin un plan que las conecte.</p>
-    <p class="lede vis" data-rv="" dl="2" style="margin-top:14px;max-width:56ch">Por eso este sitio empieza por enseñarte, para después desarrollar e implementar una estrategia que te ayude a construir tu patrimonio.</p>
-    <p class="lede vis" data-rv="" dl="2" style="margin-top:14px;max-width:56ch">Queremos aportar valor a la sociedad mexicana; por ello, preparamos una escuela virtual completamente gratuita para ti. Además, reunimos a las nuevas mentes de las finanzas mexicanas en nuestro foro. ¡Visítalo!</p>
+    <p class="lede vis" data-rv="" dl="2" style="margin-top:14px;max-width:56ch">Por eso este sitio empieza por entenderte, para después desarrollar e implementar una estrategia que te ayude a construir tu patrimonio.</p>
+    <p class="lede vis" data-rv="" dl="2" style="margin-top:14px;max-width:56ch">Plano Capital aporta valor a la sociedad Mexicana; por ello, preparamos una escuela virtual completamente gratuita para ti. Además, reunimos a las nuevas mentes de las finanzas mexicanas en nuestro foro. ¡Visítalo!</p>
 
+  </div>
+</section>
+
+<!-- ═══ DIAGNÓSTICO ═══ -->
+<section class="pad noche" id="diagnostico">
+  <div class="wrap">
+    <p class="ojo" data-rv="">Empieza por aquí</p>
+    <h2 data-rv="" dl="1" style="margin:.26em 0 0;max-width:16ch">Tu diagnóstico, <em>en tres preguntas.</em></h2>
+    <p class="lede" data-rv="" dl="2" style="margin-top:18px">Solo necesitas responder tres preguntas para descubrir el orden ideal en que debes resolver tus finanzas, de forma transparente y a tu propio ritmo.</p>
+    <div class="diag">
+      <div data-rv="" dl="1">
+        <div class="marca"><i class="on"></i><i></i><i></i><i></i></div>
+        <div class="et on" id="e1">
+          <h3>¿Para quién estamos construyendo?</h3>
+          <div class="opc">
+            <button data-v="persona">Para mí y mi familia</button>
+            <button data-v="empresa">Para mi empresa</button>
+            <button data-v="ambos">Para los dos</button>
+          </div>
+        </div>
+        <div class="et" id="e2">
+          <h3>¿Qué te quita el sueño?</h3>
+          <div class="opc">
+            <button data-v="futuro">No saber si voy a poder retirarme</button>
+            <button data-v="riesgo">Que un imprevisto se lleve todo</button>
+            <button data-v="crecer">Que mi dinero no esté creciendo</button>
+            <button data-v="orden">Tener todo regado y sin plan</button>
+          </div>
+        </div>
+        <div class="et" id="e3">
+          <h3>¿Qué tienes armado hoy?</h3>
+          <div class="opc">
+            <button data-v="nada">Prácticamente nada</button>
+            <button data-v="algo">Algo suelto, sin estrategia</button>
+            <button data-v="bastante">Bastante, quiero optimizarlo</button>
+          </div>
+        </div>
+        <div class="et" id="e4">
+  <h3 style="margin-bottom:6px">Tu plan está listo.</h3>
+  <p class="min" style="margin-bottom:18px">Déjanos a dónde mandártelo y te lo explicamos sin compromiso.</p>
+
+  <form id="fDiag" name="diagnostico" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <input type="hidden" name="form-name" value="diagnostico">
+
+    <!-- trampa anti-spam, invisible para personas -->
+    <p class="oculto" aria-hidden="true">
+      <label>No llenar este campo: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+    </p>
+
+    <!-- respuestas del diagnóstico, se llenan por JS antes de enviar -->
+    <input type="hidden" name="para_quien" id="hQ1">
+    <input type="hidden" name="preocupacion" id="hQ2">
+    <input type="hidden" name="hoy_tiene" id="hQ3">
+    <input type="hidden" name="plan_sugerido" id="hReco">
+
+    <div class="d2">
+      <div class="campo"><label for="dNom">Tu nombre</label><input type="text" id="dNom" name="nombre" placeholder="Nombre y apellido" autocomplete="name"></div>
+      <div class="campo"><label for="dTel">Tu WhatsApp</label><input type="tel" id="dTel" name="whatsapp" placeholder="10 dígitos" autocomplete="tel"></div>
+    </div>
+
+    <button class="btn oro" id="dEnv" type="submit" style="width:100%">Recibir mi plan</button>
+    <p class="min" id="dErr" style="margin-top:11px"></p>
+  </form>
+</div>
+      </div>
+      <div class="plano" data-rv="" dl="2">
+        <canvas id="planoC" aria-hidden="true" width="596" height="352"></canvas>
+        <div class="adentro">
+          <span class="ojo">Tu plano</span>
+          <h3 id="pTit" style="margin:12px 0 4px">Contesta para verlo</h3>
+          <p class="min" id="pSub">Cada respuesta acomoda una piedra distinta.</p>
+          <ul id="pLista"></ul>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -325,49 +400,60 @@
           </div>
         </div>
 
-        <div class="solucion-lista">
+        <button class="solucion-toggle" aria-expanded="false" aria-controls="cuerpo-personas">
+          <span class="solucion-toggle-txt">Ver servicios</span>
+          <span class="solucion-toggle-icono"></span>
+        </button>
 
-          <div class="solucion-item">
-            <span>01</span>
-            <h4>Inversiones</h4>
-            <p>Estrategias por objetivo y plazo.</p>
+        <div class="solucion-cuerpo" id="cuerpo-personas">
+          <div class="solucion-cuerpo-inner">
+
+            <div class="solucion-lista">
+
+              <div class="solucion-item">
+                <span>01</span>
+                <h4>Inversiones</h4>
+                <p>Estrategias por objetivo y plazo.</p>
+              </div>
+
+              <div class="solucion-item">
+                <span>02</span>
+                <h4>Planes para retiro</h4>
+                <p>Construye hoy el ingreso de mañana.</p>
+              </div>
+
+              <div class="solucion-item">
+                <span>03</span>
+                <h4>PPR</h4>
+                <p>Planeación de retiro con beneficio fiscal.</p>
+              </div>
+
+              <div class="solucion-item">
+                <span>04</span>
+                <h4>Seguros de vida</h4>
+                <p>Protección para ti y tu patrimonio.</p>
+              </div>
+
+              <div class="solucion-item">
+                <span>05</span>
+                <h4>Gastos médicos mayores</h4>
+                <p>Cobertura ante gastos inesperados.</p>
+              </div>
+
+              <div class="solucion-item">
+                <span>06</span>
+                <h4>Diagnóstico patrimonial</h4>
+                <p>Descubre dónde estás y qué sigue.</p>
+              </div>
+
+            </div>
+
+            <a href="#diagnostico" class="solucion-link">
+              Construir mi estrategia →
+            </a>
+
           </div>
-
-          <div class="solucion-item">
-            <span>02</span>
-            <h4>Planes para retiro</h4>
-            <p>Construye hoy el ingreso de mañana.</p>
-          </div>
-
-          <div class="solucion-item">
-            <span>03</span>
-            <h4>PPR</h4>
-            <p>Planeación de retiro con beneficio fiscal.</p>
-          </div>
-
-          <div class="solucion-item">
-            <span>04</span>
-            <h4>Seguros de vida</h4>
-            <p>Protección para ti y tu patrimonio.</p>
-          </div>
-
-          <div class="solucion-item">
-            <span>05</span>
-            <h4>Gastos médicos mayores</h4>
-            <p>Cobertura ante gastos inesperados.</p>
-          </div>
-
-          <div class="solucion-item">
-            <span>06</span>
-            <h4>Diagnóstico patrimonial</h4>
-            <p>Descubre dónde estás y qué sigue.</p>
-          </div>
-
         </div>
-
-        <a href="#diagnostico" class="solucion-link">
-          Construir mi estrategia →
-        </a>
 
       </article>
 
@@ -388,49 +474,60 @@
           </div>
         </div>
 
-        <div class="solucion-lista">
+        <button class="solucion-toggle" aria-expanded="false" aria-controls="cuerpo-pymes">
+          <span class="solucion-toggle-txt">Ver servicios</span>
+          <span class="solucion-toggle-icono"></span>
+        </button>
 
-          <div class="solucion-item">
-            <span>01</span>
-            <h4>Gastos médicos colectivo</h4>
-            <p>Protección para tu equipo.</p>
+        <div class="solucion-cuerpo" id="cuerpo-pymes">
+          <div class="solucion-cuerpo-inner">
+
+            <div class="solucion-lista">
+
+              <div class="solucion-item">
+                <span>01</span>
+                <h4>Gastos médicos colectivo</h4>
+                <p>Protección para tu equipo.</p>
+              </div>
+
+              <div class="solucion-item">
+                <span>02</span>
+                <h4>Seguro de hombre clave</h4>
+                <p>Reduce el riesgo operativo.</p>
+              </div>
+
+              <div class="solucion-item">
+                <span>03</span>
+                <h4>Flotillas</h4>
+                <p>Protección integral para tus vehículos.</p>
+              </div>
+
+              <div class="solucion-item">
+                <span>04</span>
+                <h4>Embarcaciones</h4>
+                <p>Cobertura para activos marítimos.</p>
+              </div>
+
+              <div class="solucion-item">
+                <span>05</span>
+                <h4>Aviación</h4>
+                <p>Protección para aeronaves corporativas.</p>
+              </div>
+
+              <div class="solucion-item">
+                <span>06</span>
+                <h4>Continuidad del negocio</h4>
+                <p>Prepara tu empresa ante imprevistos.</p>
+              </div>
+
+            </div>
+
+            <a href="#contacto" class="solucion-link">
+              Proteger mi empresa →
+            </a>
+
           </div>
-
-          <div class="solucion-item">
-            <span>02</span>
-            <h4>Seguro de hombre clave</h4>
-            <p>Reduce el riesgo operativo.</p>
-          </div>
-
-          <div class="solucion-item">
-            <span>03</span>
-            <h4>Flotillas</h4>
-            <p>Protección integral para tus vehículos.</p>
-          </div>
-
-          <div class="solucion-item">
-            <span>04</span>
-            <h4>Embarcaciones</h4>
-            <p>Cobertura para activos marítimos.</p>
-          </div>
-
-          <div class="solucion-item">
-            <span>05</span>
-            <h4>Aviación</h4>
-            <p>Protección para aeronaves corporativas.</p>
-          </div>
-
-          <div class="solucion-item">
-            <span>06</span>
-            <h4>Continuidad del negocio</h4>
-            <p>Prepara tu empresa ante imprevistos.</p>
-          </div>
-
         </div>
-
-        <a href="#contacto" class="solucion-link">
-          Proteger mi empresa →
-        </a>
 
       </article>
 
@@ -439,69 +536,12 @@
   </div>
 </section>
 
-<!-- ═══ DIAGNÓSTICO ═══ -->
-<section class="pad noche" id="diagnostico">
-  <div class="wrap">
-    <p class="ojo" data-rv="">Empieza por aquí</p>
-    <h2 data-rv="" dl="1" style="margin:.26em 0 0;max-width:16ch">Tu diagnóstico, <em>en tres preguntas.</em></h2>
-    <p class="lede" data-rv="" dl="2" style="margin-top:18px">Solo necesitas responder tres preguntas para descubrir el orden ideal en que debes resolver tus finanzas, de forma transparente y a tu propio ritmo.</p>
-    <div class="diag">
-      <div data-rv="" dl="1">
-        <div class="marca"><i class="on"></i><i></i><i></i><i></i></div>
-        <div class="et on" id="e1">
-          <h3>¿Para quién estamos construyendo?</h3>
-          <div class="opc">
-            <button data-v="persona">Para mí y mi familia</button>
-            <button data-v="empresa">Para mi empresa</button>
-            <button data-v="ambos">Para los dos</button>
-          </div>
-        </div>
-        <div class="et" id="e2">
-          <h3>¿Qué te quita el sueño?</h3>
-          <div class="opc">
-            <button data-v="futuro">No saber si voy a poder retirarme</button>
-            <button data-v="riesgo">Que un imprevisto se lleve todo</button>
-            <button data-v="crecer">Que mi dinero no esté creciendo</button>
-            <button data-v="orden">Tener todo regado y sin plan</button>
-          </div>
-        </div>
-        <div class="et" id="e3">
-          <h3>¿Qué tienes armado hoy?</h3>
-          <div class="opc">
-            <button data-v="nada">Prácticamente nada</button>
-            <button data-v="algo">Algo suelto, sin estrategia</button>
-            <button data-v="bastante">Bastante, quiero optimizarlo</button>
-          </div>
-        </div>
-        <div class="et" id="e4">
-          <h3 style="margin-bottom:6px">Tu plan está listo.</h3>
-          <p class="min" style="margin-bottom:18px">Déjanos a dónde mandártelo y te lo explicamos sin compromiso.</p>
-          <div class="d2">
-            <div class="campo"><label for="dNom">Tu nombre</label><input type="text" id="dNom" placeholder="Nombre y apellido" autocomplete="name"></div>
-            <div class="campo"><label for="dTel">Tu WhatsApp</label><input type="tel" id="dTel" placeholder="10 dígitos" autocomplete="tel"></div>
-          </div>
-          <button class="btn oro" id="dEnv" style="width:100%">Recibir mi plan</button>
-          <p class="min" id="dErr" style="margin-top:11px"></p>
-        </div>
-      </div>
-      <div class="plano" data-rv="" dl="2">
-        <canvas id="planoC" aria-hidden="true" width="596" height="352"></canvas>
-        <div class="adentro">
-          <span class="ojo">Tu plano</span>
-          <h3 id="pTit" style="margin:12px 0 4px">Contesta para verlo</h3>
-          <p class="min" id="pSub">Cada respuesta acomoda una piedra distinta.</p>
-          <ul id="pLista"></ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ═══ ESCUELA ═══ 
 <section class="pad crema" id="escuela">
   <div class="wrap">
     <p class="ojo" data-rv="">Escuela Plano Capital</p>
-    <h2 data-rv="" dl="1" style="margin:.26em 0 0;max-width:17ch">Lo que debieron enseñarte <em>y nadie te enseñó.</em></h2>
+    <h2 data-rv="" dl="1" style="margin:.26em 0 0;max-width:17ch">Lo que debieron entenderte <em>y nadie te enseñó.</em></h2>
     <p class="lede" data-rv="" dl="2" style="margin-top:18px">Lecciones cortas, en español claro y sin vendernos nada. Aquí empieza el valor: si sales sabiendo más, ya ganamos los dos.</p>
     <div class="lecs">
       <a class="lec" href="#" data-rv=""><div class="cab"><canvas data-sem="interes" width="596" height="334"></canvas><span>MÓDULO 01</span></div>
@@ -615,6 +655,33 @@
 </div></footer>
 
 <script>
+/* ══ soluciones: acordeón en mobile, uno abierto a la vez ══ */
+(function(){
+  var bloques = Array.prototype.slice.call(document.querySelectorAll(".solucion-bloque"));
+  if(!bloques.length) return;
+  bloques.forEach(function(bloque){
+    var btn = bloque.querySelector(".solucion-toggle");
+    var txt = bloque.querySelector(".solucion-toggle-txt");
+    if(!btn) return;
+    btn.addEventListener("click", function(){
+      var yaAbierto = bloque.classList.contains("abierto");
+      bloques.forEach(function(b){
+        b.classList.remove("abierto");
+        var t = b.querySelector(".solucion-toggle");
+        var x = b.querySelector(".solucion-toggle-txt");
+        if(t) t.setAttribute("aria-expanded","false");
+        if(x) x.textContent = "Ver servicios";
+      });
+      if(!yaAbierto){
+        bloque.classList.add("abierto");
+        btn.setAttribute("aria-expanded","true");
+        if(txt) txt.textContent = "Ocultar";
+      }
+    });
+  });
+})();
+
+  
 (function(){
 "use strict";
 var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;

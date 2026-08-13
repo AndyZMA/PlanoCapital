@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hemos recibido tu plan — Plano Capital</title>
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#1B2631">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,600;1,300&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/css/styles.css">
+<style>
+    /* ══════════════════════════════════════
+   GRACIAS / CONFIRMACIÓN
+══════════════════════════════════════ */
+
+.gracias-pantalla{
+  --g-crema:#f3eee3;
+  --g-crema-2:#ebe2d2;
+
+  --g-tinta:#17242d;
+
+  --g-petroleo:#183847;
+  --g-petroleo-2:#102b37;
+
+  --g-oro:#c99a12;
+  --g-oro-claro:#ddb94d;
+
+  position:relative;
+
+  min-height:100svh;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:
+    clamp(28px,5vh,50px)
+    clamp(16px,4vw,32px);
+
+  overflow:hidden;
+
+  font-family:var(--a);
+
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(201,154,18,.10),
+      transparent 35%
+    ),
+    linear-gradient(
+      160deg,
+      #f7f3eb 0%,
+      var(--g-crema) 55%,
+      var(--g-crema-2) 100%
+    );
+}
+
+
+/* ══════════════════════════════════════
+   TEXTURA
+══════════════════════════════════════ */
+
+.gracias-pantalla::before{
+  content:"";
+
+  position:absolute;
+  inset:0;
+
+  pointer-events:none;
+
+  background:
+    linear-gradient(
+      rgba(23,36,45,.022) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(23,36,45,.022) 1px,
+      transparent 1px
+    );
+
+  background-size:42px 42px;
+
+  -webkit-mask-image:
+    radial-gradient(
+      circle at center,
+      #000,
+      transparent 82%
+    );
+
+  mask-image:
+    radial-gradient(
+      circle at center,
+      #000,
+      transparent 82%
+    );
+}
+
+
+/* ══════════════════════════════════════
+   ARCO
+══════════════════════════════════════ */
+
+.gracias-arco{
+  position:absolute;
+
+  z-index:2;
+
+  top:50%;
+  left:50%;
+
+  width:min(470px,76vw);
+
+  transform:
+    translate(-50%,-70%);
+
+  pointer-events:none;
+}
+
+
+.gracias-arco canvas{
+  display:block;
+
+  width:100%;
+  height:240px;
+}
+
+
+/* glow debajo del arco */
+
+.gracias-arco::after{
+  content:"";
+
+  position:absolute;
+
+  left:50%;
+  bottom:13%;
+
+  width:58%;
+  height:22%;
+
+  transform:translateX(-50%);
+
+  border-radius:50%;
+
+  background:
+    rgba(201,154,18,.18);
+
+  filter:blur(42px);
+
+  opacity:.75;
+
+  pointer-events:none;
+}
+
+
+/* ══════════════════════════════════════
+   CARD
+══════════════════════════════════════ */
+
+.gracias-card{
+  position:relative;
+
+  z-index:3;
+
+  width:min(100%,440px);
+
+  margin-top:260px;
+
+  padding:
+    28px
+    28px
+    24px;
+
+  text-align:center;
+
+  color:#fff;
+
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(255,255,255,.045),
+      transparent 38%
+    ),
+    linear-gradient(
+      145deg,
+      #204656 0%,
+      var(--g-petroleo) 45%,
+      var(--g-petroleo-2) 100%
+    );
+
+  border:
+    1px solid
+    rgba(201,154,18,.25);
+
+  border-radius:20px;
+
+  box-shadow:
+    0 24px 60px rgba(23,36,45,.22),
+    0 7px 22px rgba(23,36,45,.12),
+    inset 0 1px 0 rgba(255,255,255,.08);
+
+  opacity:0;
+
+  transform:
+    translateY(70px)
+    scale(.96);
+
+  transition:
+    opacity .65s var(--e),
+    transform .78s var(--e);
+}
+
+
+/* estado visible */
+
+.gracias-card.vis{
+  opacity:1;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+
+/* detalle dorado superior */
+
+.gracias-card::before{
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:50%;
+
+  width:68px;
+  height:3px;
+
+  transform:translateX(-50%);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      var(--g-oro),
+      transparent
+    );
+
+  border-radius:
+    0 0 999px 999px;
+}
+
+
+/* ══════════════════════════════════════
+   CHECK
+══════════════════════════════════════ */
+
+.gracias-check{
+  width:48px;
+  height:48px;
+
+  margin:
+    0 auto
+    18px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border-radius:50%;
+
+  background:
+    linear-gradient(
+      145deg,
+      var(--g-oro-claro),
+      var(--g-oro)
+    );
+
+  box-shadow:
+    0 7px 18px
+    rgba(201,154,18,.26);
+
+  position:relative;
+  z-index:2;
+}
+
+
+.gracias-check svg{
+  width:21px;
+  height:21px;
+
+  stroke:#fff;
+
+  fill:none;
+
+  stroke-width:2.4;
+
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+
+/* ══════════════════════════════════════
+   TÍTULO
+══════════════════════════════════════ */
+
+.noche .gracias-card h1{
+  max-width:13ch;
+
+  margin:
+    0 auto
+    11px;
+
+  font-family:var(--s);
+
+  font-size:
+    clamp(28px,3.3vw,36px);
+
+  font-weight:300;
+
+  line-height:1.05;
+
+  letter-spacing:-.022em;
+
+  color:#fff;
+}
+
+
+/* ══════════════════════════════════════
+   TEXTO
+══════════════════════════════════════ */
+
+.noche .gracias-card p{
+  max-width:37ch;
+
+  margin:0 auto;
+
+  font-family:var(--a);
+
+  font-size:13.5px;
+
+  font-weight:400;
+
+  line-height:1.62;
+
+  color:
+    rgba(242,246,247,.72);
+}
+
+
+/* ══════════════════════════════════════
+   CTA
+══════════════════════════════════════ */
+
+.gracias-cta{
+  display:flex;
+
+  flex-direction:column;
+
+  align-items:center;
+
+  gap:10px;
+
+  margin-top:20px;
+}
+
+
+/* base botones */
+
+.gracias-cta .btn{
+  width:min(100%,290px);
+
+  min-width:0;
+  min-height:42px;
+
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:
+    10px
+    14px;
+
+  border:
+    1px solid transparent;
+
+  border-radius:9px;
+
+  font-family:var(--a);
+
+  font-size:12.5px;
+
+  font-weight:500;
+
+  line-height:1.2;
+
+  letter-spacing:.01em;
+
+  text-align:center;
+
+  text-decoration:none;
+
+  white-space:normal;
+
+  cursor:pointer;
+
+  transition:
+    transform .25s var(--e),
+    background .25s var(--e),
+    color .25s var(--e),
+    border-color .25s var(--e),
+    box-shadow .25s var(--e);
+}
+
+
+/* ═════════════════════
+   CTA PRINCIPAL
+═════════════════════ */
+
+.gracias-cta .btn.oro{
+  color:#241b02;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e0bd4c 0%,
+      var(--g-oro) 100%
+    );
+
+  border-color:
+    rgba(255,255,255,.10);
+
+  box-shadow:
+    0 6px 14px
+    rgba(201,154,18,.18),
+    inset 0 1px 0
+    rgba(255,255,255,.28);
+}
+
+
+.gracias-cta .btn.oro:hover{
+  color:#241b02;
+
+  background:
+    linear-gradient(
+      135deg,
+      #e8ca68 0%,
+      #d3a51e 100%
+    );
+
+  transform:
+    translateY(-1px);
+
+  box-shadow:
+    0 9px 18px
+    rgba(201,154,18,.24),
+    inset 0 1px 0
+    rgba(255,255,255,.32);
+}
+
+
+.gracias-cta .btn.oro:active{
+  transform:
+    translateY(0);
+
+  box-shadow:
+    0 4px 10px
+    rgba(201,154,18,.16);
+}
+
+
+/* ═════════════════════
+   CTA SECUNDARIO
+═════════════════════ */
+
+.noche .gracias-cta .btn.linea{
+  color:
+    rgba(255,255,255,.88);
+
+  background:
+    rgba(255,255,255,.055);
+
+  border-color:
+    rgba(255,255,255,.16);
+
+  box-shadow:
+    inset 0 1px 0
+    rgba(255,255,255,.035);
+}
+
+
+.noche .gracias-cta .btn.linea:hover{
+  color:#fff;
+
+  background:
+    rgba(255,255,255,.10);
+
+  border-color:
+    rgba(201,154,18,.48);
+
+  box-shadow:none;
+
+  transform:
+    translateY(-1px);
+}
+
+
+.noche .gracias-cta .btn.linea:active{
+  transform:none;
+
+  background:
+    rgba(255,255,255,.07);
+}
+
+
+/* ═════════════════════
+   FOCUS
+═════════════════════ */
+
+.gracias-cta .btn:focus-visible{
+  outline:
+    2px solid
+    var(--g-oro);
+
+  outline-offset:3px;
+}
+
+
+/* ══════════════════════════════════════
+   TABLET
+══════════════════════════════════════ */
+
+@media (max-width:700px){
+
+  .gracias-arco{
+    width:min(440px,82vw);
+
+    transform:
+      translate(-50%,-72%);
+  }
+
+
+  .gracias-arco canvas{
+    height:220px;
+  }
+
+
+  .gracias-card{
+    width:min(100%,420px);
+
+    margin-top:240px;
+
+    padding:
+      26px
+      24px
+      22px;
+  }
+
+
+  .gracias-cta .btn{
+    width:min(100%,280px);
+  }
+
+}
+
+
+/* ══════════════════════════════════════
+   MOBILE
+══════════════════════════════════════ */
+
+@media (max-width:520px){
+
+  .gracias-pantalla{
+    padding:
+      20px
+      15px;
+  }
+
+
+  .gracias-arco{
+    top:47%;
+
+    width:min(370px,90vw);
+
+    transform:
+      translate(-50%,-82%);
+  }
+
+
+  .gracias-arco canvas{
+    height:190px;
+  }
+
+
+  .gracias-card{
+    width:min(100%,370px);
+
+    margin-top:205px;
+
+    padding:
+      24px
+      19px
+      19px;
+
+    border-radius:17px;
+
+    transform:
+      translateY(55px)
+      scale(.97);
+  }
+
+
+  .gracias-card.vis{
+    transform:none;
+  }
+
+
+  .gracias-check{
+    width:44px;
+    height:44px;
+
+    margin-bottom:16px;
+  }
+
+
+  .gracias-check svg{
+    width:19px;
+    height:19px;
+  }
+
+
+  .noche .gracias-card h1{
+    max-width:12ch;
+
+    font-size:
+      clamp(27px,8vw,33px);
+  }
+
+
+  .noche .gracias-card p{
+    max-width:33ch;
+
+    font-size:13px;
+
+    line-height:1.58;
+  }
+
+
+  .gracias-cta{
+    gap:8px;
+
+    margin-top:18px;
+  }
+
+
+  .gracias-cta .btn{
+    width:min(100%,270px);
+
+    min-height:40px;
+
+    padding:
+      10px
+      13px;
+
+    border-radius:8px;
+
+    font-size:12px;
+  }
+
+}
+
+
+/* ══════════════════════════════════════
+   MOBILE PEQUEÑO
+══════════════════════════════════════ */
+
+@media (max-width:360px){
+
+  .gracias-pantalla{
+    padding-inline:12px;
+  }
+
+
+  .gracias-arco{
+    width:94vw;
+  }
+
+
+  .gracias-card{
+    width:100%;
+
+    margin-top:195px;
+
+    padding:
+      22px
+      16px
+      17px;
+  }
+
+
+  .noche .gracias-card h1{
+    font-size:27px;
+  }
+
+
+  .noche .gracias-card p{
+    font-size:12.5px;
+  }
+
+
+  .gracias-cta .btn{
+    width:min(100%,250px);
+
+    min-height:39px;
+
+    padding:
+      9px
+      12px;
+
+    font-size:11.75px;
+  }
+
+}
+
+
+/* ══════════════════════════════════════
+   REDUCIR MOVIMIENTO
+══════════════════════════════════════ */
+
+@media (prefers-reduced-motion:reduce){
+
+  .gracias-card{
+    transition:none;
+  }
+
+}
+</style>
+</head>
+<body class="noche">
+
+<section class="gracias-pantalla">
+
+  <div class="gracias-arco" aria-hidden="true">
+    <canvas id="arcoGracias" width="360" height="230"></canvas>
+  </div>
+
+  <div class="gracias-card" id="graciasCard">
+    <div class="gracias-check">
+      <svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
+    </div>
+
+    <h1>Hemos recibido tu plan.</h1>
+    <p>Ya tenemos tus respuestas. En breve un experto de Plano Capital te contacta por WhatsApp para explicarte tu estrategia, sin compromiso.</p>
+
+    <div class="gracias-cta">
+      <a class="btn oro" href="https://wa.me/525514660228" target="_blank" rel="noopener">Escribir ahora por WhatsApp</a>
+      <a class="btn linea" href="../index.html">Volver al inicio</a>
+    </div>
+  </div>
+
+</section>
+
+<script>
+(function(){
+  var reduce=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var ORO="#C49303";
+
+  /* ══ misma geometría del arco que usa el resto del sitio ══ */
+  function dibujaArco(ctx,W,H,prog,opc){
+    opc=opc||{};
+    var N=opc.dovelas||13;
+    var cx=W/2, base=H*0.86;
+    var R=Math.min(W*0.40,H*0.44);
+    var gr=R*0.26;
+    var Ri=R-gr;
+    var colB=opc.oscuro?"#22303D":"#1B2631";
+    var colC=opc.oscuro?"#0F1922":"#101820";
+    ctx.clearRect(0,0,W,H);
+
+    var colW=gr*1.16, colH=H*0.30*Math.min(1,prog/0.12);
+    if(colH>1){
+      ctx.fillStyle=colB;
+      [-1,1].forEach(function(s){
+        var x=cx+s*(Ri+gr/2)-colW/2;
+        ctx.fillRect(x, base, colW, colH);
+        ctx.fillRect(x-colW*0.14, base-colW*0.14, colW*1.28, colW*0.16);
+      });
+    }
+
+    var orden=[];
+    var med=(N-1)/2;
+    for(var k=0;k<med;k++){ orden.push(k); orden.push(N-1-k); }
+    orden.push(med);
+    var vis=Math.floor(Math.max(0,(prog-0.12)/0.88)*N+0.0001);
+    var sep=0.008;
+    for(var i=0;i<orden.length;i++){
+      if(i>=vis) break;
+      var d=orden[i];
+      var a1=Math.PI+(d/N)*Math.PI+sep, a2=Math.PI+((d+1)/N)*Math.PI-sep;
+      var esClave=(d===med);
+      var t=1;
+      if(i===vis-1){ var f=Math.max(0,(prog-0.12)/0.88)*N-(vis-1); t=Math.min(1,f*1.6); }
+      var caida=(1-t)*R*0.30;
+      ctx.save();
+      ctx.globalAlpha=Math.min(1,t*1.4);
+      ctx.beginPath();
+      ctx.arc(cx,base-caida,R,a1,a2);
+      ctx.arc(cx,base-caida,Ri,a2,a1,true);
+      ctx.closePath();
+      ctx.fillStyle=esClave?colC:ORO;
+      ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  var cv=document.getElementById("arcoGracias");
+  if(!cv) return;
+  var ctx=cv.getContext("2d");
+  var W=0,H=0,DPR=1;
+
+  function medir(){
+    W=cv.clientWidth; H=cv.clientHeight; if(!W||!H) return false;
+    DPR=Math.min(window.devicePixelRatio||1,2);
+    cv.width=Math.round(W*DPR); cv.height=Math.round(H*DPR);
+    ctx.setTransform(DPR,0,0,DPR,0,0);
+    return true;
+  }
+
+  function pinta(p){ if(W&&H) dibujaArco(ctx,W,H,p,{dovelas:13,oscuro:true}); }
+
+  if(!medir()){ return; }
+
+  if(reduce){
+    pinta(1);
+    document.getElementById("graciasCard").classList.add("vis");
+  } else {
+    var t0=null, dur=1500;
+    function paso(ts){
+      if(!t0) t0=ts;
+      var k=Math.min(1,(ts-t0)/dur);
+      pinta(1-Math.pow(1-k,2.4));
+      if(k<1) requestAnimationFrame(paso);
+      else document.getElementById("graciasCard").classList.add("vis");
+    }
+    requestAnimationFrame(paso);
+  }
+
+  var rt;
+  window.addEventListener("resize",function(){
+    clearTimeout(rt);
+    rt=setTimeout(function(){ if(medir()) pinta(1); },180);
+  });
+})();
+</script>
+
+</body>
+</html>
